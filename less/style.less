@@ -1,9 +1,5 @@
-/* =============================================================================
-	RESET
-	========================================================================== */
-
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, li, img, a, textarea, input, cite, code, pre, dl, dt, dd, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, mark, time { margin: 0; padding: 0; border: 0; font-size: 100%;   outline: 0; vertical-align: baseline; background: transparent; }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+@import 'base.less';
+@import 'reset.less';
 
 /* =============================================================================
 	FONTS
@@ -22,14 +18,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	-moz-transition: @transition;  
 	-o-transition: @transition;
 	-webkit-transition: @transition;
-}
-
-.rotate (@degrees) {
-	transform:rotate(@degrees);
-	-ms-transform:rotate(@degrees);
-	-moz-transform:rotate(@degrees);
-	-webkit-transform:rotate(@degrees);
-	-o-transform:rotate(@degrees);
 }
 
 @column: 100% / 12;
@@ -94,7 +82,9 @@ a:active {
 	
 }
 
-ul {}
+ul {
+	padding-left: 0;
+}
 	
 li {
 		font-size: 1.2em;
@@ -217,14 +207,32 @@ hr.fat {
 /* =============================================================================
 	MEDIA QUERIES
 	========================================================================== */
-	
-@media screen and (max-width: 40em) {	
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
 	#footer {
 		.text {
 			font-size: 0.8em;
 			bottom: 52%;
 		}
 	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 481px) 
+and (max-width : 767px) {
+}
+
+@media screen and (max-width: 40em) {	
+	/*#footer {
+			.text {
+				font-size: 0.8em;
+				bottom: 52%;
+			}
+		}*/
 }
 
 @media screen and (max-width: 45.5em) {

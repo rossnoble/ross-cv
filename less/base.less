@@ -1,0 +1,79 @@
+/* =============================================================================
+	LESS MIXINS & VARIABLES
+	========================================================================== */
+
+.clearfix() {
+    zoom: 1;
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+.border-radius (@radius) { 
+	border-radius: @radius; 
+	-moz-border-radius: @radius; 
+	-webkit-border-radius: @radius; 
+}
+
+.box-shadow (@shadow: 0 1px 4px rgba(0,0,0,0.15)) {
+	box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	-webkit-box-shadow: @shadow;
+}
+
+.box-shadow-multi (@shadow, @more-shadow) {
+	box-shadow: @shadow, @more-shadow;
+	-moz-box-shadow: @shadow, @more-shadow;
+	-webkit-box-shadow: @shadow, @more-shadow;
+}
+
+.box-shadow-double (@shadow, @more-shadow) {
+	box-shadow: @shadow, @more-shadow;
+	-moz-box-shadow: @shadow, @more-shadow;
+	-webkit-box-shadow: @shadow, @more-shadow;
+}
+
+.box-shadow-triple (@shadow, @more-shadow, @even-more-shadow) {
+	box-shadow: @shadow, @more-shadow, @even-more-shadow;
+	-moz-box-shadow: @shadow, @more-shadow, @even-more-shadow;
+	-webkit-box-shadow: @shadow, @more-shadow, @even-more-shadow;
+}
+
+.transition (@transition) {
+	transition: @transition;
+	-moz-transition: @transition;  
+	-o-transition: @transition;
+	-webkit-transition: @transition;
+}
+
+.rotate (@degrees) {
+	transform:rotate(@degrees);
+	-ms-transform:rotate(@degrees);
+	-moz-transform:rotate(@degrees);
+	-webkit-transform:rotate(@degrees);
+	-o-transform:rotate(@degrees);
+}
+
+.gradient (@top, @bottom) {
+	background: @bottom + 10%;
+	background: -moz-linear-gradient(top,  @bottom 0%, @top 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@bottom), color-stop(100%,@top));
+	background: -webkit-linear-gradient(top,  @bottom 0%,@top 100%);
+	background: -o-linear-gradient(top,  @bottom 0%,@top 100%);
+	background: -ms-linear-gradient(top,  @bottom 0%,@top 100%);
+	background: linear-gradient(top,  @bottom 0%,@top 100%);
+}
+
+/* Useful Classes ========================== */
+.center { text-align: center; }
+.hide { display: none; }
+.right { float: right; }

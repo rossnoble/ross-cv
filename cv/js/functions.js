@@ -1,22 +1,14 @@
-
-function Scroll(selector, target)
-{	
-	$(selector).click(function(event){
-
-		event.preventDefault();
+$(function() {	
 	
-		$.scrollTo(
-			$(target),
-			/* 0, */
-			800
-			/* {queue: true} */
-			/* {easing: 'swing'} */
-		);
+	// Scroll to target element id
+	$('#nav a').click(function(e) {
+		e.preventDefault();
+		var $target = $(this).attr('href');
+		$.scrollTo($target, 400);
 	});
-}
-
-$(function(){
-	Scroll('#nav ul li a:first', '#education');
-	Scroll('#nav ul li a:eq(1)', '#skills');
-	Scroll('#nav ul li a:eq(2)', '#experience');
+	
+	// Remove all links
+	if (window.location.search == '?print=1') {
+		$('a').contents().unwrap();
+	}
 });
