@@ -52,7 +52,7 @@
 	
 		<section id="education">
 			
-			<h2>Education and Personal Strengths</h3>
+			<h2>Education</h3>
 		
 			<h3>McGill University</h3>
 			<h4>Bachelor of Commerce <span class="right">Sept 2005 &mdash; May 2009</span></h4>
