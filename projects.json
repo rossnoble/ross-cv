@@ -1,0 +1,42 @@
+{
+	"Clients" : {
+		"Arkalumen" : {
+			"title" : "Arkalumen",
+			"url" : "http://arkalumen.com",
+			"image_file" : "sample_image.jpg",
+			"about" : "Arkalumen is a Candian LED lighting company. They were looking for a site to showcase their line of OEM products.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"]
+		},
+		"House of Carlyle" : {
+			"title" : "House of Carlyle",
+			"url" : "http://houseofcarlyle.com",
+			"image_file" : "sample_image.jpg",
+			"about" : "The House of Carlyle is a blog run by a Toronto based comedy writer. The site is built on Wordpress",
+			"services" : ["design", "front-end", "back-end", "Wordpress"]
+		},
+		"Jane Noble" : {
+			"title" : "Jane Noble",
+			"url" : "http://janenoble.com",
+			"image_file" : "sample_image.jpg",
+			"about" : "Jane Noble is an actor living in Laguna Niguel, Orange County.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"]
+		},
+		"Advanceit" : {
+			"title" : "Advanceit",
+			"url" : "http://advanceit.com",
+			"image_file" : "sample_image.jpg",
+			"about" : "Advanceit is a the leading merchant cash advance provider in Canada. I ported their main website to use CodeIgniter, and developed the front-end development of their internal funding platform.",
+			"services" : ["front-end", "back-end", "CodeIgniter", "Marketing"]
+		},
+		"Context.IO" : {
+			"title" : "EmailToBox",
+			"url" : "http://emailtobox.com",
+			"image_file" : "sample_image.jpg",
+			"about" : "I worked closely with Bruno Morency at Context.IO to develop an an email app for the Box.net market place. The app can be installed here.",
+			"services" : ["design", "front-end", "back-end", "CodeIgniter", "Marketing"]
+		}
+	},
+	"Projects" : {
+		
+	}
+}
