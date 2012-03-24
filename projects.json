@@ -18,7 +18,7 @@
 			"title" : "Jane Noble",
 			"url" : "http://janenoble.com",
 			"image_file" : "sample_image.jpg",
-			"about" : "Jane Noble is an actor living in Laguna Niguel, Orange County.",
+			"about" : "Jane Noble is an incredibly talents actor living in Orange County, California. And yes, she is also my mother.",
 			"services" : ["design", "front-end", "back-end", "Wordpress"]
 		},
 		"Advanceit" : {
@@ -34,9 +34,41 @@
 			"image_file" : "sample_image.jpg",
 			"about" : "I worked closely with Bruno Morency at Context.IO to develop an an email app for the Box.net market place. The app can be installed here.",
 			"services" : ["design", "front-end", "back-end", "CodeIgniter", "Marketing"]
+		},
+		"Shopify" : {
+			"title" : "Rustic (Shopify Theme)",
+			"url" : "http://themes.shopify.com/",
+			"image_file" : "sample_image.jpg",
+			"about" : "I worked closely with Bruno Morency at Context.IO to develop an an email app for the Box.net market place. The app can be installed here.",
+			"services" : ["design", "front-end", "back-end", "CodeIgniter", "Marketing"]
 		}
 	},
 	"Projects" : {
-		
+		"1" : {
+			"title" : "Burnreel",
+			"url" : "http://burnreel.com",
+			"image_file" : "sample_image.jpg",
+			"summary" : "When I’m not building sites for clients, I’m working on <a href=\"http://burnreel.com\" target=\"_blank\">Burnreel</a>, a social movie review website with my co-founder <a href=\"http://robertbrockie.com\" target=\"_blank\">Robert Brockie</a>."
+		},
+		"2" : {
+			"title" : "Perzoot",
+			"url" : "http://perzoot.com",
+			"image_file" : "sample_image.jpg",
+			"summary" : "Perzoot was a project I worked on with <a href=\"http://danielnephin.com\" target=\"_blank\">Daniel Nephin</a>, a job search aggrator aimed at improving the job search experiece.</p> <p>I focused on the UI and developed features missing from many other job posting aggregator services. It is now defunct, but you can view the project here."
+		}
+	},
+	"Social" : {
+		"Linkedin" : {
+			"site" : "Linkedin",
+			"url" : "http://linkedin.com/ross"
+		},
+		"Twitter" : {
+			"site" : "Twitter",
+			"url" : "http://twitter.com/rossnoble"
+		},
+		"Github" : {
+			"site" : "Github",
+			"url" : "http://github.com/rossnoble"
+		}
 	}
 }

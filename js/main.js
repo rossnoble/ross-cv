@@ -1,16 +1,17 @@
 var UI = {
 	
 	init : function () {
-		
-		navOffset = $('#nav').offset().top;
 
-		this.toggleNav();
+		this.jumpToSection();
 		this.fixNav();
 		this.updateNav();
 		this.hoverThumbnail();
+		
+		this.updateNav('.bookmark');
+		
 	},
 	
-	toggleNav : function () {
+	jumpToSection : function () {
 		
 		$('#main-menu li a').click(function(e) {
 			e.preventDefault();
@@ -22,6 +23,8 @@ var UI = {
 	
 	fixNav : function () {
 		
+		navOffset = $('#nav').offset().top;
+		
 		$(window).scroll(function () {	
 			var windowPos = $(window).scrollTop();
 			
@@ -30,31 +33,25 @@ var UI = {
 			} else {
 				$('#nav').css({ position: '', top : '', width: '', 'z-index': '' });
 			}
-			
-			UI.updateNav('services', 200, 499);
-			UI.updateNav('portfolio', 500, 1499);
-			UI.updateNav('projects', 1500, 2899);
-			UI.updateNav('contact', 2900, 3500);
-			
 		});
 	},
 	
-	updateNav : function (target, min, max) {
+	updateNav : function (selector) {
+		
 		$(window).scroll(function () {
+			$(selector).each(function () {
 			
-			var y = $(window).scrollTop();
-			
-			if (y < 201) {
-				$('#nav').find('li.active').removeClass('active');
-			}
-			
-			if (y > min && y <= max) {
-				$nav = $('#nav');
-				$item = $nav.find('a[href="#'+target+'"]').parent();
-				$item.siblings().removeClass('active');
-				$item.addClass('active');
-			}
-			
+				var min = $(this).offset().top;
+				var max = $(this).height() + min;
+				var distFromTop = $(window).scrollTop();
+				var id = $(this).attr('id');
+
+				if (distFromTop > min && distFromTop <= max) {
+					$item = $('#nav').find('a[href="#'+id+'"]').parent();
+					$item.siblings().removeClass('active');
+					$item.addClass('active');
+				}
+			});
 		});
 	},
 	

@@ -48,6 +48,12 @@
 	-webkit-box-shadow: @shadow, @more-shadow, @even-more-shadow;
 }
 
+.box-shadow-quad (@shadow, @more-shadow, @even-more-shadow, @most-shadow) {
+	box-shadow: @shadow, @more-shadow, @even-more-shadow, @most-shadow;
+	-moz-box-shadow: @shadow, @more-shadow, @even-more-shadow, @most-shadow;
+	-webkit-box-shadow: @shadow, @more-shadow, @even-more-shadow, @most-shadow;
+}
+
 .transition (@transition) {
 	transition: @transition;
 	-moz-transition: @transition;  
@@ -63,14 +69,15 @@
 	-o-transform:rotate(@degrees);
 }
 
-.gradient (@top, @bottom) {
-	background: @bottom + 10%;
-	background: -moz-linear-gradient(top,  @bottom 0%, @top 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@bottom), color-stop(100%,@top));
-	background: -webkit-linear-gradient(top,  @bottom 0%,@top 100%);
-	background: -o-linear-gradient(top,  @bottom 0%,@top 100%);
-	background: -ms-linear-gradient(top,  @bottom 0%,@top 100%);
-	background: linear-gradient(top,  @bottom 0%,@top 100%);
+.gradient (@top, @bottom) {	
+	background: darken(@top, 5%);
+	background: -moz-linear-gradient(top,  @top 0%, @bottom 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@top), color-stop(100%,@bottom));
+	background: -webkit-linear-gradient(top,  @top 0%,@bottom 100%);
+	background: -o-linear-gradient(top,  @top 0%,@bottom 100%);
+	background: -ms-linear-gradient(top,  @top 0%,@bottom 100%);
+	background: linear-gradient(top,  @top 0%,@bottom 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@top', endColorstr='@bottom',GradientType=0 );
 }
 
 /* Useful Classes ========================== */

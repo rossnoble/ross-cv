@@ -40,7 +40,7 @@
 	<article id="main">
 		
 		<div class="">
-			<header id="header" class="">
+			<header id="header" class="bookmark">
 				<a id="mail-link" href="mailto:hello@rossnoble.net?subject=Hello!">Work with me!</a>
 				<h1><a href="/">Ross Haliburton Noble</a></h1>
 				<h2><span>Design</span> <span>Development</span> <span>Consulting</span></h2>
@@ -49,6 +49,7 @@
 		
 		<nav id="nav">
 				<ul id="main-menu" class="">
+					<li class="active"><a href="#header">Home</a></li>
 					<li><a href="#services">Services</a></li>
 					<li><a href="#portfolio">Portfolio</a></li>
 					<li><a href="#projects">Projects</a></li>
@@ -58,20 +59,25 @@
 		
 		<div id="body">
 			
-			<section id="services">
+			<section id="services" class="bookmark">
 				<div class="container">				
-					<div class="column-4">
-						<h3>About &rarr;</h3>
-						<p>I am a freelance web designer &amp; developer living and working in Montreal, QC.</p>
-
-						<p>I work with individuals, startups and established businesses to solve problems using web.</p>
-
-						<p>Have a project you need help on? Send me an email. Let’s chat.</p>
+					<div class="column-12">
+						<h2>Who are you? What do you do?</h2>
+						<div id="about">
+							<p>I am a freelance web designer &amp; developer living and working in Montreal, QC. I work with <em>individuals</em>, <em>startups</em> and <em>established businesses</em> to solve problems using the web and other technology.</p>
+							<p>Have a project you need help on? <a href="mailto:hello@rossnoble.net?subject=Hello!">Send me an email. Let’s chat</a>.</p>
+						</div>
+					</div>
+					<div class="column-12">
+						<h3>The Process</h3>
 					</div>
 				</div>
+				<figure>
+					<img src="/images/circle-graphic.png" />
+				</figure>
 			</section>
 			
-			<section id="portfolio">
+			<section id="portfolio" class="bookmark">
 				<div class="container">
 					<header class="column-12">
 						<h2>Clients &amp; Sample Work</h2>
@@ -83,9 +89,9 @@
 			
 					<?php foreach($projects['Clients'] as $project) : ?>
 				
-					<article class="project">
+					<article>
 					
-						<div class="column-5">
+						<div class="column-4">
 							<div class="thumbnail">
 								<a href="#">
 									<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" class="thumb" />	
@@ -95,7 +101,7 @@
 								</div>
 							</div>
 						</div>
-					<div class="column-7">
+					<div class="column-8">
 						<h3><?php echo $project['title'] ?>
 							<a href="<?php echo $project['url'] ?>" target="_blank" class="external">Visit the Site &raquo;</a>
 						</h3>
@@ -115,11 +121,37 @@
 				</div>
 			</section>
 			
-			<section id="projects">
+			<section id="projects" class="bookmark">
 				
+				<header class="">
+					<h2>Other Projects</h2>
+				</header>
+				
+				<div class="container">		
+					<?php foreach($projects['Projects'] as $project) : ?>
+					
+					<article>
+						<div class="column-6">
+							<div class="thumbnail">
+								<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" />
+							</div>
+						</div>
+						<div class="column-6">
+							<h3><?php echo $project['title'] ?></h3>
+							<p><?php echo $project['summary'] ?></p>
+						</div>
+					</article>
+				
+					<?php endforeach ?>
+				</div>
 			</section>
 			
-			<section id="contact">
+			<section id="contact" class="bookmark">
+				
+				<header>
+					<h2>Get in Touch</h2>	
+				</header>
+				
 				<div class="container">
 					<div class="column-4">
 						<h3>Work</h3>
@@ -141,24 +173,31 @@
 						</ul>
 					</div>
 					<div class="column-4">
-						<h3>Projects</h3>
-						<p>I am a co-founder of the social film review site <a href="http://burnreel.com" target="_blank" class="hoc">Burnreel</a> with <a href="http://robertbrockie.com" target="_blank" class="hoc">Robert Brockie</a>.</p>
-
-						<p>I helped build a job search aggregator called <a href="http://www.perzoot.com" target="_blank" class="pz">Perzoot</a> with <a href="http://danielnephin.net/" target="_blank" class="pz">Daniel Nephin</a>.</p>
-
-						<p>I was a co-founder of <a href="http://startupifier.com" target="_blank" class="stupf">Startupifier</a>, an organization that connects students to the startup community.</p>
+						<h3>Elsewhere</h3>
+						<ul>
+							<?php foreach($projects['Social'] as $item) : ?>
+							<li><a href="<?php echo $item['url'] ?>"><?php echo $item['site'] ?></a></li>
+							<?php endforeach ?>
+						</ul>
 					</div>
+					
+					<div class="column-12">
+						<h3>A Little Bit About Me</h3>
+							
+						<p>I'm very active in the local startup scene in Montreal. I was a co-founder of <a href="http://startupifier.com" target="_blank" class="stupf">Startupifier</a>, an organization that connects students to the startup community.</p>
+						
+						<p>I also enjoy movies, books and <a href="http://en.wikipedia.org/wiki/Puerto_Rico_(board_game)" target="_blank">German</a> <a href="http://en.wikipedia.org/wiki/Settlers_of_Catan" target="_blank">board</a> <a href="http://en.wikipedia.org/wiki/Carcassonne_(board_game)" target="_blank">games</a>.</p>
+						<p>You can follow me on <a href="http://twitter.com/rossnoble" target="_blank">Twitter</a>.</p>
+					</div>
+					
+					<footer id="footer" class="column-12">
+						<small><p>Ross Noble. 2012 &copy; Copyright n' stuff.</small>
+					</footer>
+					
 				</div>
+				
 			</section>
 			
-			<footer id="footer" class="column-12">
-				<h3>A Little Bit About Me</h3>
-				<p>I live in Montreal where I design and build websites and web applications.</p>
-
-				<p>I also enjoy movies, books and <a href="http://en.wikipedia.org/wiki/Puerto_Rico_(board_game)" target="_blank">German</a> <a href="http://en.wikipedia.org/wiki/Settlers_of_Catan" target="_blank">board</a> <a href="http://en.wikipedia.org/wiki/Carcassonne_(board_game)" target="_blank">games</a>.</p>
-				<p>You can follow me on <a href="http://twitter.com/rossnoble" target="_blank">Twitter</a>.</p>
-				<small><p>Ross Noble. 2012 &copy; Copyright n' stuff.</small>
-			</footer>
 		</div>
 		<!-- END .container -->
 		<div id="resize"></div>
