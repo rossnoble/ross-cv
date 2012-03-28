@@ -64,8 +64,8 @@
 					<div class="column-12">
 						<h2>Who are you? What do you do?</h2>
 						<div id="about">
-							<p>I am a freelance web designer &amp; developer living and working in Montreal, QC. I work with <em>individuals</em>, <em>startups</em> and <em>established businesses</em> to solve problems using the web and other technology.</p>
-							<p>Have a project you need help on? <a href="mailto:hello@rossnoble.net?subject=Hello!">Send me an email. Let’s chat</a>.</p>
+							<p>I am a freelance web designer and developer living and working in Montreal, QC. I work with <em>individuals</em>, <em>startups</em> and <em>established businesses</em> to solve problems using the web and other technology.</p>
+							<p>Want to chat about your next project? <a href="mailto:hello@rossnoble.net?subject=Hello!">Send me an email</a>.</p>
 						</div>
 					</div>
 					<div class="column-12">
@@ -89,34 +89,40 @@
 			
 					<?php foreach($projects['Clients'] as $project) : ?>
 				
+					<?php if ($project['active'] == 'true') : ?>
+						
 					<article>
+						<div class="content">
 					
-						<div class="column-4">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" class="thumb" />	
-								</a>	
-								<div class="hover-msg">
-									<span>View Larger Image</span>
+							<div class="column-5">
+								<div class="thumbnail">
+									<a href="#">
+										<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" class="thumb" />	
+									</a>	
+									<div class="hover-msg">
+										<span>View Larger Image</span>
+									</div>
 								</div>
 							</div>
-						</div>
-					<div class="column-8">
-						<h3><?php echo $project['title'] ?>
-							<a href="<?php echo $project['url'] ?>" target="_blank" class="external">Visit the Site &raquo;</a>
-						</h3>
-						<h4>The Project</h4>
-						<p><?php echo $project['about'] ?></p>
+							<div class="column-7">
+								<h3><?php echo $project['title'] ?>
+									<a href="<?php echo $project['url'] ?>" target="_blank" class="external">Visit the Site &raquo;</a>
+								</h3>
+								<h4>The Project</h4>
+								<p><?php echo $project['about'] ?></p>
 					
-						<h4>Services</h4>
-						<ul class="tags">
-							<?php foreach($project['services'] as $tag): ?>
-							<li><?php echo $tag ?></li>
-							<?php endforeach ?>
-						</ul>
-					</div>
+								<h4>Services</h4>
+								<ul class="tags">
+									<?php foreach($project['services'] as $tag): ?>
+									<li><?php echo $tag ?></li>
+									<?php endforeach ?>
+								</ul>
+							</div>
+						</div>
 					</article>
-				
+					
+					<?php endif ?>
+					
 					<?php endforeach; ?>
 				</div>
 			</section>
@@ -129,16 +135,23 @@
 				
 				<div class="container">		
 					<?php foreach($projects['Projects'] as $project) : ?>
-					
+				
 					<article>
-						<div class="column-6">
-							<div class="thumbnail">
-								<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" />
+						<div class="content">
+							<div class="column-5">
+								<div class="thumbnail">
+									<a href="#">
+										<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" />
+									</a>
+									<div class="hover-msg">
+										<span>View Larger Image</span>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="column-6">
-							<h3><?php echo $project['title'] ?></h3>
-							<p><?php echo $project['summary'] ?></p>
+							<div class="column-7">
+								<h3><?php echo $project['title'] ?></h3>
+								<p><?php echo $project['summary'] ?></p>
+							</div>
 						</div>
 					</article>
 				
@@ -153,30 +166,16 @@
 				</header>
 				
 				<div class="container">
-					<div class="column-4">
-						<h3>Work</h3>
-						<p>If you’d like to discuss collaborating on your next web project, don’t hesitate to <a href="mailto:hello@rossnoble.net?subject=Hello!">send me an email</a>. I offer the following services:</p>
-						<ul>
-							<li>Web &amp; graphic design</li>
-							<li>Frontend &amp; backend web development</li>
-							<li>Online marketing consulting</li>
-						</ul>
+					<div class="column-8">
+						<h3>Working Together</h3>
+						<p>If you'd like to discuss collaborating on your next web project, don't hesitate to <a href="mailto:hello@rossnoble.net?subject=Hello!">send me an email</a>. Even if you're just in the early planning stages, let's chat. I might be able to help.</p>
 					</div>
 				
-					<div class="column-4">
-						<h3>Contact</h3>
-						<p>If you’d like to discuss collaborating on your next web project, don’t hesitate to <a href="mailto:hello@rossnoble.net?subject=Hello!">send me an email</a>. I offer the following services:</p>
-						<ul>
-							<li>Web &amp; graphic design</li>
-							<li>Frontend &amp; backend web development</li>
-							<li>Online marketing consulting</li>
-						</ul>
-					</div>
-					<div class="column-4">
+					<div id="elsewhere" class="column-4">
 						<h3>Elsewhere</h3>
 						<ul>
 							<?php foreach($projects['Social'] as $item) : ?>
-							<li><a href="<?php echo $item['url'] ?>"><?php echo $item['site'] ?></a></li>
+							<li><a href="<?php echo $item['url'] ?>" target="_blank"><?php echo $item['site'] ?></a></li>
 							<?php endforeach ?>
 						</ul>
 					</div>
@@ -184,10 +183,10 @@
 					<div class="column-12">
 						<h3>A Little Bit About Me</h3>
 							
-						<p>I'm very active in the local startup scene in Montreal. I was a co-founder of <a href="http://startupifier.com" target="_blank" class="stupf">Startupifier</a>, an organization that connects students to the startup community.</p>
+						<img src="/images/ross-cartoon-212x212.jpg" class="avatar" />
+						<p>I live and work in Montreal, QC where I'm active in the local startup scene. I was a co-founder of <a href="http://startupifier.com" target="_blank">Startupifier</a>, an organization that connects students to the startup community through hackathons and other events.</p>
 						
-						<p>I also enjoy movies, books and <a href="http://en.wikipedia.org/wiki/Puerto_Rico_(board_game)" target="_blank">German</a> <a href="http://en.wikipedia.org/wiki/Settlers_of_Catan" target="_blank">board</a> <a href="http://en.wikipedia.org/wiki/Carcassonne_(board_game)" target="_blank">games</a>.</p>
-						<p>You can follow me on <a href="http://twitter.com/rossnoble" target="_blank">Twitter</a>.</p>
+						<p>When I'm not designing or coding, I enjoy watching movies, reading books and playing <a href="http://en.wikipedia.org/wiki/Puerto_Rico_(board_game)" target="_blank">German</a> <a href="http://en.wikipedia.org/wiki/Settlers_of_Catan" target="_blank">board</a> <a href="http://en.wikipedia.org/wiki/Carcassonne_(board_game)" target="_blank">games</a>.</p>
 					</div>
 					
 					<footer id="footer" class="column-12">
@@ -204,7 +203,12 @@
 
 	<article>
 		
-		
+	<div id="darkness" class="close">
+		<div id="overlay">
+			<!-- <div class="content"></div> -->
+		</div>
+	</div>
+	
 	<script src="/js/jquery.scrollTo-min.js"></script>
 	<script src="/js/main.js"></script>
 	

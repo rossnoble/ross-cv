@@ -5,7 +5,10 @@ var UI = {
 		this.jumpToSection();
 		this.fixNav();
 		this.updateNav();
-		this.hoverThumbnail();
+		// this.hoverThumbnail();
+		
+		this.lightbox();
+		this.closeLightbox();
 		
 		this.updateNav('.bookmark');
 		
@@ -46,7 +49,7 @@ var UI = {
 				var distFromTop = $(window).scrollTop();
 				var id = $(this).attr('id');
 
-				if (distFromTop > min && distFromTop <= max) {
+				if (distFromTop >= min - 1 && distFromTop < max) {
 					$item = $('#nav').find('a[href="#'+id+'"]').parent();
 					$item.siblings().removeClass('active');
 					$item.addClass('active');
@@ -54,12 +57,28 @@ var UI = {
 			});
 		});
 	},
+		
+	lightbox : function () {
+		$('.thumbnail').click(function (e) {
+			e.preventDefault();
+			var imageURL = $(this).find('img').attr('src');
+			
+			$.ajax({
+				type: 'POST',
+				url: imageURL,
+				success: function (data) {
+					$('#darkness').show();
+					$('#overlay').html('<img src="'+imageURL+'" />');
+					$('#overlay').show();
+				}
+			});
+			
+		});
+	},
 	
-	hoverThumbnail : function () {
-		$('.project .thumbnail').hover(function () {
-			$(this).find('.hover-msg').show();
-		}, function () {
-			$(this).find('.hover-msg').hide();
+	closeLightbox : function () {
+		$('.close').click(function () {
+			$('#darkness').hide();
 		});
 	}
 	

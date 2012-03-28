@@ -3,68 +3,74 @@
 		"Arkalumen" : {
 			"title" : "Arkalumen",
 			"url" : "http://arkalumen.com",
-			"image_file" : "sample_image.jpg",
-			"about" : "Arkalumen is a Candian LED lighting company. They were looking for a site to showcase their line of OEM products.",
-			"services" : ["design", "front-end", "back-end", "Wordpress"]
+			"image_file" : "arkalumen.jpg",
+			"about" : "Arkalumen is a Candian LED lighting company. They were looking for a site to showcase their line of light engines and other products.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"],
+			"active" : "true"
 		},
 		"House of Carlyle" : {
 			"title" : "House of Carlyle",
 			"url" : "http://houseofcarlyle.com",
-			"image_file" : "sample_image.jpg",
-			"about" : "The House of Carlyle is a blog run by a Toronto based comedy writer. The site is built on Wordpress",
-			"services" : ["design", "front-end", "back-end", "Wordpress"]
+			"image_file" : "house-of-carlyle.jpg",
+			"about" : "The House of Carlyle is a blog run by a Toronto based comedy writer named S.H. Carlyle. The was built using Wordpress.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"],
+			"active" : "true"
 		},
 		"Jane Noble" : {
 			"title" : "Jane Noble",
 			"url" : "http://janenoble.com",
-			"image_file" : "sample_image.jpg",
-			"about" : "Jane Noble is an incredibly talents actor living in Orange County, California. And yes, she is also my mother.",
-			"services" : ["design", "front-end", "back-end", "Wordpress"]
+			"image_file" : "jane-noble.jpg",
+			"about" : "Jane Noble is an incredibly talented film and stage actor living in Orange County, California. And yes, she is also my mother.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"],
+			"active" : "true"
 		},
 		"Advanceit" : {
 			"title" : "Advanceit",
 			"url" : "http://advanceit.com",
-			"image_file" : "sample_image.jpg",
-			"about" : "Advanceit is a the leading merchant cash advance provider in Canada. I ported their main website to use CodeIgniter, and developed the front-end development of their internal funding platform.",
-			"services" : ["front-end", "back-end", "CodeIgniter", "Marketing"]
+			"image_file" : "advanceit.jpg",
+			"about" : "Advanceit is a the leading merchant cash advance provider in Canada. I ported their main website to <a href=\"http://codeigniter.com\" target=\"_blank\">CodeIgniter</a>, and developed the front-end of their internal funding platform.",
+			"services" : ["front-end", "back-end", "CodeIgniter", "Marketing"],
+			"active" : "true"
 		},
 		"Context.IO" : {
 			"title" : "EmailToBox",
 			"url" : "http://emailtobox.com",
-			"image_file" : "sample_image.jpg",
-			"about" : "I worked closely with Bruno Morency at Context.IO to develop an an email app for the Box.net market place. The app can be installed here.",
-			"services" : ["design", "front-end", "back-end", "CodeIgniter", "Marketing"]
+			"image_file" : "email-to-box-2.jpg",
+			"about" : "I worked closely with Bruno Morency at <a href=\"http://context.io\" target=\"_blank\">Context.IO</a> to develop an email app for the <a href=\"http://box.net\" target=\"_blank\">Box.net</a> marketplace. The app required integrating with the Context.IO and and Box APIs.",
+			"services" : ["design", "front-end"],
+			"active" : "true"
 		},
 		"Shopify" : {
 			"title" : "Rustic (Shopify Theme)",
 			"url" : "http://themes.shopify.com/",
 			"image_file" : "sample_image.jpg",
 			"about" : "I worked closely with Bruno Morency at Context.IO to develop an an email app for the Box.net market place. The app can be installed here.",
-			"services" : ["design", "front-end", "back-end", "CodeIgniter", "Marketing"]
+			"services" : ["design", "front-end", "back-end", "CodeIgniter", "Marketing"],
+			"active" : "false"
 		}
 	},
 	"Projects" : {
 		"1" : {
 			"title" : "Burnreel",
 			"url" : "http://burnreel.com",
-			"image_file" : "sample_image.jpg",
-			"summary" : "When I’m not building sites for clients, I’m working on <a href=\"http://burnreel.com\" target=\"_blank\">Burnreel</a>, a social movie review website with my co-founder <a href=\"http://robertbrockie.com\" target=\"_blank\">Robert Brockie</a>."
+			"image_file" : "burnreel.jpg",
+			"summary" : "When I'm not working with clients, I’m working on <a href=\"http://burnreel.com\" target=\"_blank\">Burnreel</a>, a social movie review website with my co-founder <a href=\"http://robertbrockie.com\" target=\"_blank\">Robert Brockie</a>."
 		},
 		"2" : {
 			"title" : "Perzoot",
 			"url" : "http://perzoot.com",
-			"image_file" : "sample_image.jpg",
-			"summary" : "Perzoot was a project I worked on with <a href=\"http://danielnephin.com\" target=\"_blank\">Daniel Nephin</a>, a job search aggrator aimed at improving the job search experiece.</p> <p>I focused on the UI and developed features missing from many other job posting aggregator services. It is now defunct, but you can view the project here."
+			"image_file" : "perzoot.jpg",
+			"summary" : "Perzoot was a project I worked on with <a href=\"http://danielnephin.com\" target=\"_blank\">Daniel Nephin</a>, a job search aggrator aimed at improving the job search experiece.</p> <p>I focused on the UI while Daniel developed the backend. It is now defunct, but you can <a href=\"http://perzoot.com\" target=\"_blank\">view the project here</a>."
 		}
 	},
 	"Social" : {
-		"Linkedin" : {
-			"site" : "Linkedin",
-			"url" : "http://linkedin.com/ross"
-		},
 		"Twitter" : {
 			"site" : "Twitter",
 			"url" : "http://twitter.com/rossnoble"
+		},
+		"Linkedin" : {
+			"site" : "Linkedin",
+			"url" : "http://www.linkedin.com/pub/ross-noble/13/468/26a"
 		},
 		"Github" : {
 			"site" : "Github",
