@@ -118,6 +118,10 @@
 									<?php endforeach ?>
 								</ul>
 							</div>
+							
+						</div>
+						<div class="shelf">
+							<img src="/images/shelf.png" />
 						</div>
 					</article>
 					
@@ -152,6 +156,9 @@
 								<h3><?php echo $project['title'] ?></h3>
 								<p><?php echo $project['summary'] ?></p>
 							</div>
+						</div>
+						<div class="shelf">
+							<img src="/images/shelf.png" />
 						</div>
 					</article>
 				
