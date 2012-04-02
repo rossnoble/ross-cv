@@ -1091,6 +1091,7 @@ article .shelf img {
   cursor: pointer;
 }
 #darkness #overlay {
+  text-align: center;
   position: absolute;
   top: 60px;
   padding-bottom: 80px;
@@ -1102,6 +1103,7 @@ article .shelf img {
 }
 #darkness #overlay img {
   width: 100%;
+  max-width: 1120px;
 }
 /* =============================================================================
 	MEDIA QUERIES : Let's get responsive!
