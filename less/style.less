@@ -11,21 +11,51 @@
 /** { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }*/
 
 /* Fixed or Fluid */
-@layout: 'fixed'; 
-
-/* Pixel based grid 978 */
-
-
+@layout: fluid;
 @columns: 12;
+
+/* Fixed */
 @gutter: 30px;
-@fluidWidth: 100% / 12;
 @columnWidth : 50px;
 
-.width(@numColumns) {
+.width(@numColumns) when (@layout = fixed) {
 	float: left;
 	width: @columnWidth * @numColumns + @gutter * (@numColumns - 1);
 	margin: 0 @gutter/2;
 }
+
+.container_width() when (@layout = fixed) {
+	width: @columns * @columnWidth + @columns * @gutter;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Fluid */
+@fluidWidth: 100% / @columns;
+@fluidGutter: 4%;
+@fluidContainerGutter: 8%;
+
+.width(@numColumns) when (@layout = fluid) {
+	float: left;
+	width: @fluidWidth * @numColumns - @fluidGutter;
+	margin: 0 @fluidGutter / 2;
+	
+}
+
+.container_width() when (@layout = fluid) {
+	width: 100% - @fluidContainerGutter;
+	margin: 0 auto;
+	position: relative;
+}
+
+.container {
+/*	width: @columns * @columnWidth + @columns * @gutter;
+	margin: 0 auto;
+	position: relative;
+*/
+	.container_width();
+}
+
 
 /* Columns */
 .column-1 { .width(1); }
@@ -54,11 +84,6 @@
 .pull-3 { .pull(3); }
 .pull-4 { .pull(4); }
 
-.container {
-	width: @columns * @columnWidth + @columns * @gutter;
-	margin: 0 auto;
-	position: relative;
-}
 
 
 /* Fonts ========================== */
@@ -84,6 +109,7 @@
 /* Colours ========================== */
 
 @red: #E62222;
+@pink: #E69FAF;
 @blue: #0060B2;
 @lightBlue: #42ABFF;
 @darkBlue: #004984;
@@ -200,25 +226,25 @@ hr.fat {
 /* Header ========================== */
 
 #header {
-	padding: 2em 0;
+	padding: 3em 0;
 	position: relative;
 	background: #EDF5F6;
-/*	background: url(../images/graph-paper-dark.jpg) repeat;*/
+	background: url(../images/graph-paper-dark.jpg) repeat;
 	text-align: center;
 	
 	h1 {
 		margin: 0.5em 0 0.2em;
 		text-transform: uppercase;
 		.header;
-		
+
 		a {
-			color: black;
-			text-shadow: -3px 3px #F8CDD2;
+			color: white;
+			text-shadow: -3px 3px black;
 			.transition(all 0.5s linear);
 		}
 		a:hover {
 			text-decoration: none;
-			text-shadow: -3px 3px @red;
+			text-shadow: -3px 3px @pink;
 		}
 	}
 	
@@ -227,20 +253,26 @@ hr.fat {
 		font-weight: normal;
 		.header-light;
 		.uppercase;
-		text-shadow: -2px 2px #BBB;
 		word-spacing: 1em;
+		color: lighten(@green, 20%);
+		text-shadow: -2px 2px darken(@green, 30%);
+		
 	}
 	
 	#mail-link {
+		.normal;
+		color: @yellow;
 		position: absolute;
 		top: 20px;
 		right: 20px;
 		font-size: 1.4em;
 		.rotate(7deg);
 		font-weight: bold;
-		letter-spacing: -1px;
+		letter-spacing: 0px;
 	}
 }
+
+/* Nav Menu ========================== */
 
 #nav {
 	background: rgba(0,0,0,0.85);
@@ -273,6 +305,9 @@ hr.fat {
 		}
 	}
 }
+#nav.active {
+	.box-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
 
 /* Body Content ========================== */
 
@@ -295,7 +330,6 @@ section {
 }
 
 #services {
-	
 	text-align: center;
 	
 	em {
@@ -336,10 +370,9 @@ article {
 	}
 	.content {
 		.clearfix();
-		height: 250px;
+		margin-bottom: -0.5em;
 	}
 	.shelf {
-		/*background: url(../images/shelf.png) bottom center no-repeat;*/
 		text-align: center;
 		clear: both;
 		img {
@@ -358,6 +391,10 @@ article {
 		clear: both;
 		.clearfix();
 		
+/*		.column-5, .column-7 {
+			.clearfix();
+		}
+*/		
 		.content {
 			.clearfix();
 		}
@@ -479,8 +516,6 @@ article {
 		clear: both;
 		padding-bottom: 1em;
 		margin-bottom: 2.5em;
-		
-/*		background: url(../images/shelf.png) bottom center no-repeat;*/
 		
 		.content {
 			.clearfix();
@@ -619,13 +654,27 @@ and (max-width : 480px),
 	
 	#nav {
 		#main-menu {
+			padding: 0.4em 0;
 			li, a {
-				display: block;
-				font-size: 1.0em;
+/*				display: block;*/
+				margin: 0;
+				font-size: 0.9em;
 			}
 		}
 	}
 
+	.column-5, .column-7, .column-4, .column-8 {
+		.width(12);
+		clear: both;
+	}
+	#contact {
+		.avatar {
+			width: 140px;
+		}
+	}
+	.thumbnail {
+		margin-bottom: 1em;
+	}
 }
 
 /* Landscape */
@@ -634,12 +683,17 @@ and (min-width : 481px)
 and (max-width : 767px), 
 (min-device-width : 481px) and
 (max-device-width : 767px) {
-	@columnWidth : 50px;
-	.container {
+	#nav #main-menu li {
+		margin: 0;
+/*		font-size: 1.0em;*/
 	}
-	.column-5, .column-7 {
-		.width(6);
-		clear: both;
+	body {
+		font-size: 90%;
+	}
+	#contact {
+		.avatar {
+			width: 140px;
+		}
 	}
 }
 

@@ -33,8 +33,10 @@ var UI = {
 			
 			if (windowPos > navOffset) {
 				$('#nav').css({ position: 'fixed', top : '0', width: '100%', 'z-index': '50' });
+				$('#nav').addClass('active');
 			} else {
 				$('#nav').css({ position: '', top : '', width: '', 'z-index': '' });
+				$('#nav').removeClass('active');
 			}
 		});
 	},
@@ -53,6 +55,7 @@ var UI = {
 					$item = $('#nav').find('a[href="#'+id+'"]').parent();
 					$item.siblings().removeClass('active');
 					$item.addClass('active');
+					// window.location.hash = id;
 				}
 			});
 		});
