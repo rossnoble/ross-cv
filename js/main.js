@@ -62,9 +62,9 @@ var UI = {
 	},
 		
 	lightbox : function () {
-		$('.thumbnail').click(function (e) {
+		$('.overlay-trigger').click(function (e) {
 			e.preventDefault();
-			var imageURL = $(this).find('img').attr('src');
+			var imageURL = $(this).attr('href');
 			
 			$.ajax({
 				type: 'POST',

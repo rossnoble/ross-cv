@@ -849,6 +849,19 @@ article .shelf {
 article .shelf img {
   width: 100%;
 }
+.overlay-trigger {
+  /*	float: left;*/
+
+  zoom: 1;
+}
+.overlay-trigger:before,
+.overlay-trigger:after {
+  content: "";
+  display: table;
+}
+.overlay-trigger:after {
+  clear: both;
+}
 #portfolio {
   background: url(../images/graph-paper-dark.jpg) repeat;
   border-top: 5px solid #00377B;
@@ -858,10 +871,6 @@ article .shelf img {
   margin-bottom: 2.5em;
   clear: both;
   zoom: 1;
-  /*		.column-5, .column-7 {
-			.clearfix();
-		}
-*/
 }
 #portfolio article:before,
 #portfolio article:after {
