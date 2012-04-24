@@ -37,7 +37,9 @@ nav,
 section {
   display: block;
 }
-audio, canvas, video {
+audio,
+canvas,
+video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -104,7 +106,8 @@ a:focus {
   outline: thin dotted;
 }
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-a:hover, a:active {
+a:hover,
+a:active {
   outline: 0;
 }
 /* =============================================================================
@@ -113,7 +116,8 @@ a:hover, a:active {
 abbr[title] {
   border-bottom: 1px dotted;
 }
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 blockquote {
@@ -159,7 +163,8 @@ pre {
 q {
   quotes: none;
 }
-q:before, q:after {
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -167,7 +172,8 @@ small {
   font-size: 85%;
 }
 /* Position subscript and superscript content without affecting line-height: h5bp.com/k */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -182,14 +188,16 @@ sub {
 /* =============================================================================
    Lists
    ========================================================================== */
-ul, ol {
+ul,
+ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
 }
 dd {
   margin: 0 0 0 40px;
 }
-nav ul, nav ol {
+nav ul,
+nav ol {
   list-style: none;
   list-style-image: none;
   margin: 0;
@@ -261,7 +269,8 @@ textarea {
 /*
  * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
  */
-button, input {
+button,
+input {
   line-height: normal;
 }
 /*
@@ -280,13 +289,15 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements
  */
-button[disabled], input[disabled] {
+button[disabled],
+input[disabled] {
   cursor: default;
 }
 /*
  * Consistent box sizing and appearance
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
   *width: 13px;
@@ -298,13 +309,15 @@ input[type="search"] {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 /*
  * Remove inner padding and border in FF3/4: h5bp.com/l
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -318,7 +331,8 @@ textarea {
   resize: vertical;
 }
 /* Colors for form validity */
-input:invalid, textarea:invalid {
+input:invalid,
+textarea:invalid {
   background-color: #f0dddd;
 }
 /* =============================================================================
@@ -368,7 +382,8 @@ td {
   width: 1px;
 }
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
@@ -399,7 +414,8 @@ td {
     -ms-filter: none !important;
   }
   /* Black prints faster: h5bp.com/s */
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: underline;
   }
   a[href]:after {
@@ -408,11 +424,14 @@ td {
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
     content: "";
   }
   /* Don't show links for images, or javascript/internal links */
-  pre, blockquote {
+  pre,
+  blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
@@ -420,7 +439,8 @@ td {
     display: table-header-group;
   }
   /* h5bp.com/t */
-  tr, img {
+  tr,
+  img {
     page-break-inside: avoid;
   }
   img {
@@ -429,11 +449,14 @@ td {
   @page  {
     margin: 0.5cm;
   }
-  p, h2, h3 {
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
-  h2, h3 {
+  h2,
+  h3 {
     page-break-after: avoid;
   }
 }
@@ -445,8 +468,8 @@ td {
  */
 /** { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }*/
 /* Fixed or Fluid */
-/* Fixed */
-/* Fluid */
+/* Fixed ========================== */
+/* Fluid ========================== */
 .container {
   width: 92%;
   margin: 0 auto;
@@ -757,7 +780,8 @@ section {
   clear: both;
   zoom: 1;
 }
-section:before, section:after {
+section:before,
+section:after {
   content: "";
   display: table;
 }
@@ -810,7 +834,8 @@ article .content {
   zoom: 1;
   margin-bottom: -0.5em;
 }
-article .content:before, article .content:after {
+article .content:before,
+article .content:after {
   content: "";
   display: table;
 }
@@ -824,6 +849,19 @@ article .shelf {
 article .shelf img {
   width: 100%;
 }
+.overlay-trigger {
+  /*	float: left;*/
+
+  zoom: 1;
+}
+.overlay-trigger:before,
+.overlay-trigger:after {
+  content: "";
+  display: table;
+}
+.overlay-trigger:after {
+  clear: both;
+}
 #portfolio {
   background: url(../images/graph-paper-dark.jpg) repeat;
   border-top: 5px solid #00377B;
@@ -833,12 +871,9 @@ article .shelf img {
   margin-bottom: 2.5em;
   clear: both;
   zoom: 1;
-  /*		.column-5, .column-7 {
-			.clearfix();
-		}
-*/
 }
-#portfolio article:before, #portfolio article:after {
+#portfolio article:before,
+#portfolio article:after {
   content: "";
   display: table;
 }
@@ -848,7 +883,8 @@ article .shelf img {
 #portfolio article .content {
   zoom: 1;
 }
-#portfolio article .content:before, #portfolio article .content:after {
+#portfolio article .content:before,
+#portfolio article .content:after {
   content: "";
   display: table;
 }
@@ -914,7 +950,8 @@ article .shelf img {
   zoom: 1;
   margin: 0.8em 0;
 }
-#portfolio article ul.tags:before, #portfolio article ul.tags:after {
+#portfolio article ul.tags:before,
+#portfolio article ul.tags:after {
   content: "";
   display: table;
 }
@@ -983,7 +1020,8 @@ article .shelf img {
   padding-bottom: 1em;
   margin-bottom: 2.5em;
 }
-#projects article:before, #projects article:after {
+#projects article:before,
+#projects article:after {
   content: "";
   display: table;
 }
@@ -993,7 +1031,8 @@ article .shelf img {
 #projects article .content {
   zoom: 1;
 }
-#projects article .content:before, #projects article .content:after {
+#projects article .content:before,
+#projects article .content:after {
   content: "";
   display: table;
 }
@@ -1061,7 +1100,8 @@ article .shelf img {
   zoom: 1;
   margin: 2em 0;
 }
-#contact footer:before, #contact footer:after {
+#contact footer:before,
+#contact footer:after {
   content: "";
   display: table;
 }

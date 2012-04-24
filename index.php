@@ -95,14 +95,14 @@
 						<div class="content">
 					
 							<div class="column-5">
-								<div class="thumbnail">
-									<a href="#">
+								<a href="/images/projects/<?php echo $project['image_file'] ?>" class="overlay-trigger">
+									<div class="thumbnail">
 										<img src="/images/projects/<?php echo $project['image_file'] ?>" width="" class="thumb" />	
-									</a>	
-									<div class="hover-msg">
-										<span>View Larger Image</span>
+										<div class="hover-msg">
+											<span>View Larger Image</span>
+										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 							<div class="column-7">
 								<h3><?php echo $project['title'] ?>
