@@ -70,9 +70,10 @@ var UI = {
 				type: 'POST',
 				url: imageURL,
 				success: function (data) {
-					$('#darkness').show();
 					$('#overlay').html('<img src="'+imageURL+'" />');
-					$('#overlay').show();
+					$('#darkness').fadeIn(300, function () {
+						$('#overlay').fadeIn(300);
+					});
 				}
 			});
 			
@@ -81,7 +82,7 @@ var UI = {
 	
 	closeLightbox : function () {
 		$('.close').click(function () {
-			$('#darkness').hide();
+			$('#darkness').fadeOut(300);
 		});
 	}
 	

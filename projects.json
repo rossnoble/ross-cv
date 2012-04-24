@@ -8,22 +8,6 @@
 			"services" : ["design", "front-end", "back-end", "Wordpress"],
 			"active" : "true"
 		},
-		"House of Carlyle" : {
-			"title" : "House of Carlyle",
-			"url" : "http://houseofcarlyle.com",
-			"image_file" : "house-of-carlyle.jpg",
-			"about" : "The House of Carlyle is a blog run by a Toronto based comedy writer named S.H. Carlyle. The was built using Wordpress.",
-			"services" : ["design", "front-end", "back-end", "Wordpress"],
-			"active" : "true"
-		},
-		"Jane Noble" : {
-			"title" : "Jane Noble",
-			"url" : "http://janenoble.com",
-			"image_file" : "jane-noble.jpg",
-			"about" : "Jane Noble is an incredibly talented film and stage actor living in Orange County, California. And yes, she is also my mother.",
-			"services" : ["design", "front-end", "back-end", "Wordpress"],
-			"active" : "true"
-		},
 		"Advanceit" : {
 			"title" : "Advanceit",
 			"url" : "http://advanceit.com",
@@ -38,6 +22,22 @@
 			"image_file" : "email-to-box-2.jpg",
 			"about" : "I worked closely with Bruno Morency at <a href=\"http://context.io\" target=\"_blank\">Context.IO</a> to develop an email app for the <a href=\"http://box.net\" target=\"_blank\">Box.net</a> marketplace. The app required integrating with the Context.IO and and Box APIs.",
 			"services" : ["design", "front-end"],
+			"active" : "true"
+		},
+		"House of Carlyle" : {
+			"title" : "House of Carlyle",
+			"url" : "http://houseofcarlyle.com",
+			"image_file" : "house-of-carlyle.jpg",
+			"about" : "The House of Carlyle is a blog run by a Toronto based comedy writer named S.H. Carlyle. The was built using Wordpress.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"],
+			"active" : "true"
+		},
+		"Jane Noble" : {
+			"title" : "Jane Noble",
+			"url" : "http://janenoble.com",
+			"image_file" : "jane-noble.jpg",
+			"about" : "Jane Noble is an incredibly talented film and stage actor living in Orange County, California. And yes, she is also my mother.",
+			"services" : ["design", "front-end", "back-end", "Wordpress"],
 			"active" : "true"
 		},
 		"Shopify" : {
