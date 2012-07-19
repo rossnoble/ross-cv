@@ -33,9 +33,21 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+	<script>
+    window._idl = {};{variant}{campaign}
+    (function() {
+        var idl = document.createElement('script');
+        idl.type = 'text/javascript';
+        idl.async = true;
+        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+        document.getElementsByTagName('body')[0].appendChild(idl);
+    })();
+	</script>
 </head>
 
 <body>
+
+	<a href="http://internetdefenseleague.org" style="position: fixed; left: 0; top: 30%; z-index: 100;"><img src="http://internetdefenseleague.org/images/badges/final/banner_left.png" alt="Member of The Internet Defense League" /></a>
 
 	<article id="main">
 		
