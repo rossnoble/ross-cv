@@ -1,0 +1,42 @@
+$green: #01A533;
+$white: #FFFFFF;
+$black: #000000;
+
+html {
+  background-color: $black;
+}
+
+body {
+  font-family: Courier, Monaco, sans;
+  padding: 30px;
+  color: $white;
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+}
+
+p, ul {
+  margin: 0 0 20px;
+}
+
+ul {
+  padding: 0 0 0 30px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+a {
+  color: $green;
+
+  &:hover {
+    background-color: $white;
+  }
+}
