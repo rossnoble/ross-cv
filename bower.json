@@ -1,0 +1,21 @@
+{
+  "name": "rossnoble",
+  "version": "0.0.0",
+  "authors": [
+    "Ross Noble <rosshnoble@gmail.com>"
+  ],
+  "main": "index.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "http://rossnoble.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
