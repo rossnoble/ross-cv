@@ -58,6 +58,10 @@ $radius: 4px;
   @return rgba(0, 0, 0, $opacity);
 }
 
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
+
 @mixin button($from-color, $to-color) {
   background-color: lighten($from-color, 8%);
   background-image: linear-gradient(to top, 

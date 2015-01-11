@@ -8,7 +8,7 @@ gulp.task('default', function () {
       'bower_components/jquery-ui/jquery-ui.js',
       'lib/main.js'
     ])
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(concat('index.js'))
     .pipe(gulp.dest('./app/js'));
 });

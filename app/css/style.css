@@ -113,6 +113,41 @@ a {
     background-color: #fbf2e1;
     color: #db961b; }
 
+.document {
+  text-align: center;
+  width: 120px;
+  position: relative;
+  left: 15px;
+  top: 15px; }
+  .document .icon {
+    background: url("/img/document.png") center center no-repeat;
+    width: 46px;
+    height: 59px;
+    display: inline-block; }
+  .document .icon-wrapper {
+    border: 2px solid transparent;
+    padding: 6px 10px;
+    display: inline-block;
+    line-height: 0;
+    margin-bottom: 2px; }
+  .document .filename {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: 0 1px 1px black;
+    color: white;
+    padding: 1px 3px; }
+  .document.is-selected .icon-wrapper {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 3px;
+    border-radius: 3px; }
+  .document.is-selected .filename {
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px; }
+
 .terminal {
   background: black;
   background-color: rgba(0, 0, 0, 0.7);
