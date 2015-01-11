@@ -1,3 +1,50 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 @-webkit-keyframes flash {
   0%, 100% {
     opacity: 1; }
@@ -73,11 +120,28 @@ a {
   top: 60px;
   left: 50%;
   margin-left: -350px;
-  -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden; }
+  .terminal.fullscreen {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed; }
+    .terminal.fullscreen .vim {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      margin-top: 26px; }
   .terminal .terminal-body {
     padding: 3px; }
   .terminal .vim {
@@ -85,6 +149,9 @@ a {
     overflow: scroll;
     width: 700px;
     height: 520px; }
+    .terminal .vim.fullscreen {
+      width: 100%;
+      height: 100%; }
   .terminal .vim-body {
     padding: 5px 0 0 35px; }
   .terminal .numbers {
@@ -101,50 +168,55 @@ a {
     position: absolute;
     bottom: 0;
     z-index: 1;
-    width: 100%;
-    padding: 3px; }
+    width: 100%; }
     .terminal .status-line .first {
+      font-size: 13px;
       background-color: #777777;
       color: white; }
 
 .terminal-header {
   background-color: #EEEEEE;
   background-image: linear-gradient(to top, #cccccc, #f6f6f6);
-  line-height: 0;
-  padding: 5px 8px; }
-  .terminal-header a {
-    width: 12px;
-    height: 12px;
-    display: inline-block;
-    -webkit-border-radius: 50%;
-    border-radius: 50%; }
-    .terminal-header a.green {
-      background-color: #95c486;
-      background-image: linear-gradient(to top, #7db76a, #bde5a8);
-      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
-      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
-      .terminal-header a.green:active {
-        background-image: linear-gradient(to top, #5e9a4a, #99d779);
-        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
-    .terminal-header a.orange {
-      background-color: #f8cb8c;
-      background-image: linear-gradient(to top, #f5ba66, #fde9a5);
-      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
-      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
-      .terminal-header a.orange:active {
-        background-image: linear-gradient(to top, #f1a02d, #fcda69);
-        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
-    .terminal-header a.red {
-      background-color: #ff8988;
-      background-image: linear-gradient(to top, #ff615f, #ffafad);
-      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
-      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
-      .terminal-header a.red:active {
-        background-image: linear-gradient(to top, #ff2522, #ff7370);
-        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
+  line-height: 1;
+  padding: 5px 60px 5px 8px;
+  text-align: center;
+  color: #515151;
+  text-shadow: 0 1px 0 white; }
+  .terminal-header .buttons {
+    float: left; }
+    .terminal-header .buttons a {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      -webkit-border-radius: 50%;
+      border-radius: 50%; }
+      .terminal-header .buttons a.green {
+        background-color: #95c486;
+        background-image: linear-gradient(to top, #7db76a, #bde5a8);
+        -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
+        .terminal-header .buttons a.green:active {
+          background-image: linear-gradient(to top, #5e9a4a, #99d779);
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
+      .terminal-header .buttons a.orange {
+        background-color: #f8cb8c;
+        background-image: linear-gradient(to top, #f5ba66, #fde9a5);
+        -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
+        .terminal-header .buttons a.orange:active {
+          background-image: linear-gradient(to top, #f1a02d, #fcda69);
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
+      .terminal-header .buttons a.red {
+        background-color: #ff8988;
+        background-image: linear-gradient(to top, #ff615f, #ffafad);
+        -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
+        .terminal-header .buttons a.red:active {
+          background-image: linear-gradient(to top, #ff2522, #ff7370);
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
 
 .cursor {
   background-color: #777777;
@@ -157,3 +229,28 @@ a {
   animation-fill-mode: both;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
+
+@media only screen and (max-width: 800px) {
+  body {
+    -webkit-text-size-adjust: none; }
+
+  .terminal {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    font-size: 11px; }
+    .terminal .vim {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      margin-top: 26px; }
+    .terminal .status-line {
+      display: none; } }

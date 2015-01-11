@@ -7,22 +7,25 @@
   <meta name="description" content="Ross Haliburton Noble">
   <meta name="author" content="Ross Haliburton Noble">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" type="text/css" href="/style.css">
   <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 </head>
 
 <body onload="main()">
-  <div class="terminal">
+  <div class="terminal js-terminal">
     <header class="terminal-header">
-      <a href="#" class="red js-btn">&nbsp;</a>
-      <a href="#" class="orange js-btn">&nbsp;</a>
-      <a href="#" class="green js-btn">&nbsp;</a>
+      <div class="buttons">
+        <a href="#" class="red js-btn js-close">&nbsp;</a>
+        <a href="#" class="orange js-btn">&nbsp;</a>
+        <a href="#" class="green js-btn js-fullscreen">&nbsp;</a>
+      </div>
       <span class="title">1. vim</span>
     </header>
 
     <div class="terminal-body">
-      <div class="vim">
+      <div class="vim js-vim">
         <div class="numbers">
           <div>1</div>
           <div>2</div>
@@ -95,25 +98,52 @@
           <div>~</div>
           <div>~</div>
           <div>~</div>
-          <div>~</div>
-          <div>~</div>
+        </div>
+
+        <div class="status-line">
+          <div class="first">rhn.markdown</div>
+          <div class="second">"rhn.markdown" 26L, 578C written</div>
         </div>
       </div>
     </div>
-
-    <footer class="status-line">
-      <div class="first">rhn.markdown</div>
-      <div class="second">"rhn.markdown" 26L, 578C written</div>
-    </footer>
   </div>
 
   <script>
   function main() {
+    var terminal = document.getElementsByClassName('js-terminal')[0];
+
+    // Prevent button clicks
     var buttons = document.getElementsByClassName('js-btn');
 
-    for(var i =0 ;i < buttons.length; i++) {
+    for(var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', function (e) {
         e && e.preventDefault();
+      }, false);
+    }
+
+    // Bind fullscreen toggle classes
+    var fullTrigger = document.getElementsByClassName('js-fullscreen');
+
+    for(var i = 0; i < fullTrigger.length; i++) {
+      fullTrigger[i].addEventListener('click', function (e) {
+        e && e.preventDefault();
+
+        if (terminal.className.split(' ').indexOf('fullscreen') > -1) {
+          terminal.className = terminal.className.replace(/\sfullscreen/, '');
+        } else {
+          terminal.className += ' fullscreen';
+        }
+      }, false);
+    }
+
+    // Bind close window triggers
+    var closeTrigger = document.getElementsByClassName('js-close');
+
+    for(var i = 0; i < closeTrigger.length; i++) {
+      closeTrigger[i].addEventListener('click', function (e) {
+        e && e.preventDefault();
+
+        terminal && terminal.remove();
       }, false);
     }
   }
