@@ -8,6 +8,8 @@ $violet : #7C81CD;
 $cyan   : #5ED1ED;
 $pink   : #FAA7F3;
 $grey   : #777777;
+$blue   : #86B0F0;
+$gold   : #F0CA86;
 
 // Symbols
 $asterisk: "\0002A";
@@ -15,24 +17,81 @@ $hash: "\00023";
 $space: "\000A0";
 
 // Fonts
-$font-medium: 14px;
+$font-medium: 13px;
 $line-height: 1.25;
+$font-mono: Menlo, Monaco, Courier, sans;
+
+// Other
+$radius: 4px;
+
+// Mixins
+@-webkit-keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+@mixin border-radius($radius...) {
+  -webkit-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity);
+}
+
+@mixin button($from-color, $to-color) {
+  background-color: lighten($from-color, 8%);
+  background-image: linear-gradient(to top, 
+    $from-color, $to-color);
+    @include box-shadow(inset 0 0 2px black(0.4));
+
+  &:active {
+    background-image: linear-gradient(to top, 
+      darken($from-color, 12%),
+      darken($to-color, 12%)
+    );
+    @include box-shadow(inset 0 0 4px black(0.3));
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   background-color: $black;
 }
 
 body {
+  background-image: url('/img/waves.jpg');
+  background-size: cover;
   padding: 0;
   margin : 0;
-  font-family: Menlo, Courier, Monaco, sans;
+  font-family: $font-mono;
   font-size: $font-medium;
   line-height: $line-height;
   color: $white;
-}
-
-.body {
-  padding: 5px 0 0 35px;
+  min-height: 700px;
 }
 
 h1, h2, h3, p, li {
@@ -78,62 +137,99 @@ ul {
 }
 
 a {
-  color: $pink;
+  color: $gold;
+  font-weight: bold;
   text-decoration: none;
 
   &:hover {
-    background-color: lighten($pink, 15%);
-    color: darken($pink, 10%);
-    background-color: darken($pink, 10%);
-    color: lighten($pink, 15%);
+    background-color: darken($gold, 10%);
+    color: lighten($gold, 15%);
+    background-color: lighten($gold, 20%);
+    color: darken($gold, 25%);
   }
 }
+    
+// Vim window
 
-.numbers {
+.terminal {
+  background: $black;
+  background-color: black(0.6);
   position: absolute;
-  padding: 5px 5px 5px 10px;
-  top: 0;
-  left: 0;
-  color: $grey;
-  text-align: right;
-}
+  top: 60px;
+  left: 50%;
+  margin-left: -400px;
+  @include box-shadow(0 4px 15px black);
+  @include border-radius($radius);
+  overflow: hidden;
 
-.no-content {
-  color: $grey;
-}
+  .vim {
+    padding: 3px;
+  }
 
-.status-line {
-  position: fixed;
-  bottom: 0;
-  z-index: 1;
-  background-color: $black;
-  width: 100%;
+  .vim-inner {
+    position: relative;
+    overflow: scroll;
+    width: 800px;
+    height: 550px;
+  }
 
-  .first {
-    background-color: $grey;
-    color: white;
+  .vim-body {
+    padding: 5px 0 0 35px;
+  }
+
+  .numbers {
+    position: absolute;
+    padding: 5px 5px 5px 10px;
+    top: 0;
+    left: 0;
+    color: $grey;
+    text-align: right;
+  }
+
+  .no-content {
+    color: $grey;
+  }
+
+  .status-line {
+    position: fixed;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    //background-color: $black;
+    width: 100%;
+    padding: 3px;
+
+    .first {
+      background-color: $grey;
+      color: white;
+    }
   }
 }
 
-// Flashing cursor
+.terminal-header {
+  background-color: #EEEEEE;
+  background-image: linear-gradient(to top,
+    #CCCCCC, #F6F6F6);
+  line-height: 0;
+  padding: 5px 8px;
 
-@-webkit-keyframes flash {
-  0%, 100% {
-    opacity: 1;
-  }
+  a {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    @include border-radius(50%);
 
-  50% {
-    opacity: 0;
-  }
-}
+    &.green {
+      @include button(#7DB76A, #BDE5A8);
+    }
 
-@keyframes flash {
-  0%, 100% {
-    opacity: 1;
-  }
+    &.orange {
+      @include button(#F5BA66, #FDE9A5);
+    }
 
-  50% {
-    opacity: 0;
+    &.red {
+      @include button(#FF615F, #FFAFAD);
+    }
   }
 }
 

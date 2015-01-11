@@ -1,20 +1,35 @@
+@-webkit-keyframes flash {
+  0%, 100% {
+    opacity: 1; }
+
+  50% {
+    opacity: 0; } }
+@keyframes flash {
+  0%, 100% {
+    opacity: 1; }
+
+  50% {
+    opacity: 0; } }
+* {
+  box-sizing: border-box; }
+
 html {
   background-color: black; }
 
 body {
+  background-image: url("/img/waves.jpg");
+  background-size: cover;
   padding: 0;
   margin: 0;
-  font-family: Menlo, Courier, Monaco, sans;
-  font-size: 14px;
+  font-family: Menlo, Monaco, Courier, sans;
+  font-size: 13px;
   line-height: 1.25;
-  color: #eaeaea; }
-
-.body {
-  padding: 5px 0 0 35px; }
+  color: #eaeaea;
+  min-height: 700px; }
 
 h1, h2, h3, p, li {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.25;
   color: #eaeaea; }
 
@@ -28,61 +43,109 @@ h2:before {
 
 p {
   margin: 0;
-  font-size: 14px; }
+  font-size: 13px; }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none; }
   ul li {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.25; }
     ul li:before {
       content: "\0002A" "\000A0";
       color: #7c81cd; }
 
 a {
-  color: #faa7f3;
+  color: #f0ca86;
+  font-weight: bold;
   text-decoration: none; }
   a:hover {
-    background-color: #feeffd;
-    color: #f777ec;
-    background-color: #f777ec;
-    color: #feeffd; }
+    background-color: #eab659;
+    color: #f8e8ca;
+    background-color: #fbf2e1;
+    color: #db961b; }
 
-.numbers {
+.terminal {
+  background: black;
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  padding: 5px 5px 5px 10px;
-  top: 0;
-  left: 0;
-  color: #777777;
-  text-align: right; }
+  top: 60px;
+  left: 50%;
+  margin-left: -400px;
+  -webkit-box-shadow: 0 4px 15px black;
+  box-shadow: 0 4px 15px black;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden; }
+  .terminal .vim {
+    padding: 3px; }
+  .terminal .vim-inner {
+    position: relative;
+    overflow: scroll;
+    width: 800px;
+    height: 550px; }
+  .terminal .vim-body {
+    padding: 5px 0 0 35px; }
+  .terminal .numbers {
+    position: absolute;
+    padding: 5px 5px 5px 10px;
+    top: 0;
+    left: 0;
+    color: #777777;
+    text-align: right; }
+  .terminal .no-content {
+    color: #777777; }
+  .terminal .status-line {
+    position: fixed;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 3px; }
+    .terminal .status-line .first {
+      background-color: #777777;
+      color: white; }
 
-.no-content {
-  color: #777777; }
+.terminal-header {
+  background-color: #EEEEEE;
+  background-image: linear-gradient(to top, #cccccc, #f6f6f6);
+  line-height: 0;
+  padding: 5px 8px; }
+  .terminal-header a {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+    .terminal-header a.green {
+      background-color: #95c486;
+      background-image: linear-gradient(to top, #7db76a, #bde5a8);
+      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
+      .terminal-header a.green:active {
+        background-image: linear-gradient(to top, #5e9a4a, #99d779);
+        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
+    .terminal-header a.orange {
+      background-color: #f8cb8c;
+      background-image: linear-gradient(to top, #f5ba66, #fde9a5);
+      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
+      .terminal-header a.orange:active {
+        background-image: linear-gradient(to top, #f1a02d, #fcda69);
+        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
+    .terminal-header a.red {
+      background-color: #ff8988;
+      background-image: linear-gradient(to top, #ff615f, #ffafad);
+      -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4); }
+      .terminal-header a.red:active {
+        background-image: linear-gradient(to top, #ff2522, #ff7370);
+        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3); }
 
-.status-line {
-  position: fixed;
-  bottom: 0;
-  z-index: 1;
-  background-color: black;
-  width: 100%; }
-  .status-line .first {
-    background-color: #777777;
-    color: white; }
-
-@-webkit-keyframes flash {
-  0%, 100% {
-    opacity: 1; }
-
-  50% {
-    opacity: 0; } }
-@keyframes flash {
-  0%, 100% {
-    opacity: 1; }
-
-  50% {
-    opacity: 0; } }
 .cursor {
   background-color: #777777;
   width: 7px;
