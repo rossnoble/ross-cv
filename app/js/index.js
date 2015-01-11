@@ -25786,31 +25786,9 @@ var tooltip = $.widget( "ui.tooltip", {
 
 
 }));
-function main() {
-  var terminal = document.getElementsByClassName('js-terminal')[0];
+'use strict';
 
-  // Prevent button clicks
-  var buttons = document.getElementsByClassName('js-btn');
-
-  for(var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function (e) {
-      e && e.preventDefault();
-    }, false);
-  }
-
-  // Bind close window triggers
-  var closeTrigger = document.getElementsByClassName('js-close');
-
-  for(var i = 0; i < closeTrigger.length; i++) {
-    closeTrigger[i].addEventListener('click', function (e) {
-      e && e.preventDefault();
-
-      terminal && terminal.remove();
-    }, false);
-  }
-}
-
-window.RHN = function () {
+var Vimulator = function () {
   var self = this;
 
   this.$terminal = $('.js-terminal');
@@ -25822,15 +25800,15 @@ window.RHN = function () {
   };
 
   this._bindFullScreen = function () {
-    var $terminal = this.$terminal;
+    $('.js-fullscreen').click(function (e) {
+      e && e.preventDefault();
 
-    $('.js-fullscreen').click(function () {
-      if ($terminal.hasClass('fullscreen')) {
-        $terminal
+      if (self.$terminal.hasClass('fullscreen')) {
+        self.$terminal
           .removeClass('fullscreen')
           .draggable('enable');
       } else {
-        $terminal
+        self.$terminal
           .draggable('disable')
           .addClass('fullscreen')
           .removeAttr('style');
@@ -25838,15 +25816,38 @@ window.RHN = function () {
     });
   };
 
+  this._bindMinimize = function () {
+    $('.js-minimize').click(function (e) {
+      e && e.preventDefault();
+
+      self.$terminal.animate({
+        'top': '900px',
+        'left': '2000px',
+        'width': '10%',
+        'height': '10%'
+      }, 350, function () {
+        self.terminal.remove();
+      });
+    });
+  };
+
+  this._bindClose = function () {
+    $('.js-close').click(function (e) {
+      e && e.preventDefault();
+      self.$terminal.remove();
+    });
+  };
+
   this.initialize = function () {
     this._makeDraggable();
     this._bindFullScreen();
+    this._bindMinimize();
+    this._bindClose();
   };
 
   this.initialize();
 };
 
-$(function () {
-  main();
-  new RHN();
-});
+window.Vimulator = Vimulator;
+
+$(function () { new Vimulator(); });
