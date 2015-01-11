@@ -103,7 +103,7 @@ a {
 }
 
 .status-line {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 1;
   background-color: $black;
@@ -113,4 +113,39 @@ a {
     background-color: $grey;
     color: white;
   }
+}
+
+// Flashing cursor
+
+@-webkit-keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  background-color: $grey;
+  width: 7px;
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
