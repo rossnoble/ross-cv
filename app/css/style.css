@@ -264,7 +264,7 @@ a {
       margin-bottom: 26px; }
     .terminal .terminal-header {
       display: none; }
-    .terminal .vim {
+    .terminal .vim, .terminal.fullscreen .vim {
       margin: 0; }
     .terminal .status-line {
       background-color: black;

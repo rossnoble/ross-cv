@@ -229,8 +229,10 @@ a {
       display: none;
     }
 
-    .vim {
-      margin: 0;
+    &, &.fullscreen {
+      .vim {
+        margin: 0;
+      }
     }
 
     .status-line {
