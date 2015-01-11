@@ -68,23 +68,23 @@ a {
 
 .terminal {
   background: black;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 60px;
   left: 50%;
-  margin-left: -400px;
-  -webkit-box-shadow: 0 4px 15px black;
-  box-shadow: 0 4px 15px black;
+  margin-left: -350px;
+  -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: hidden; }
-  .terminal .vim {
+  .terminal .terminal-body {
     padding: 3px; }
-  .terminal .vim-inner {
+  .terminal .vim {
     position: relative;
     overflow: scroll;
-    width: 800px;
-    height: 550px; }
+    width: 700px;
+    height: 520px; }
   .terminal .vim-body {
     padding: 5px 0 0 35px; }
   .terminal .numbers {

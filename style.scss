@@ -153,24 +153,24 @@ a {
 
 .terminal {
   background: $black;
-  background-color: black(0.6);
+  background-color: black(0.7);
   position: absolute;
   top: 60px;
   left: 50%;
-  margin-left: -400px;
-  @include box-shadow(0 4px 15px black);
+  margin-left: -350px;
+  @include box-shadow(0 10px 20px -10px black(0.7));
   @include border-radius($radius);
   overflow: hidden;
 
-  .vim {
+  .terminal-body {
     padding: 3px;
   }
 
-  .vim-inner {
+  .vim {
     position: relative;
     overflow: scroll;
-    width: 800px;
-    height: 550px;
+    width: 700px;
+    height: 520px;
   }
 
   .vim-body {
