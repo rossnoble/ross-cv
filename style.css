@@ -142,6 +142,8 @@ a {
       left: 0;
       top: 0;
       margin-top: 26px; }
+    .terminal.fullscreen .status-line {
+      margin-bottom: 26px; }
   .terminal .terminal-body {
     padding: 3px; }
   .terminal .vim {
@@ -232,7 +234,8 @@ a {
 
 @media only screen and (max-width: 800px) {
   body {
-    -webkit-text-size-adjust: none; }
+    -webkit-text-size-adjust: none;
+    min-height: none; }
 
   .terminal {
     width: 100%;
@@ -242,7 +245,8 @@ a {
     left: 0;
     bottom: 0;
     position: fixed;
-    font-size: 11px; }
+    -webkit-border-radius: 0;
+    border-radius: 0; }
     .terminal .vim {
       width: 100%;
       height: 100%;
@@ -253,4 +257,12 @@ a {
       top: 0;
       margin-top: 26px; }
     .terminal .status-line {
-      display: none; } }
+      margin-bottom: 26px; }
+    .terminal .terminal-header {
+      display: none; }
+    .terminal .vim {
+      margin: 0; }
+    .terminal .status-line {
+      background-color: black;
+      position: fixed;
+      margin: 0; } }
