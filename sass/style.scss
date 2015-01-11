@@ -117,21 +117,57 @@ a {
   &.fullscreen {
     @include fullscreen;
   }
+}
 
-  .terminal-body {
-    padding: 3px;
-  }
+.terminal-header {
+  background-color: #EEEEEE;
+  background-image: linear-gradient(to top,
+    #CCCCCC, #F6F6F6);
+  line-height: 1;
+  padding: 5px 60px 5px 8px;
+  text-align: center;
+  color: darken($grey, 15%);
+  text-shadow: 0 1px 0 white;
+  cursor: default;
 
-  .vim {
-    position: relative;
-    overflow: scroll;
-    width: 700px;
-    height: 520px;
+  .buttons {
+    float: left;
 
-    &.fullscreen {
-      width: 100%;
-      height: 100%;
+    a {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      @include border-radius(50%);
+
+      &.green {
+        @include button(#7DB76A, #BDE5A8);
+      }
+
+      &.orange {
+        @include button(#F5BA66, #FDE9A5);
+      }
+
+      &.red {
+        @include button(#FF615F, #FFAFAD);
+      }
     }
+  }
+}
+
+.terminal-body {
+  padding: 3px;
+}
+
+.vim {
+  position: relative;
+  overflow: scroll;
+  width: 700px;
+  height: 520px;
+  cursor: text;
+
+  &.fullscreen {
+    width: 100%;
+    height: 100%;
   }
 
   .vim-body {
@@ -162,40 +198,6 @@ a {
       font-size: $font-medium;
       background-color: $grey;
       color: white;
-    }
-  }
-}
-
-.terminal-header {
-  background-color: #EEEEEE;
-  background-image: linear-gradient(to top,
-    #CCCCCC, #F6F6F6);
-  line-height: 1;
-  padding: 5px 60px 5px 8px;
-  text-align: center;
-  color: darken($grey, 15%);
-  text-shadow: 0 1px 0 white;
-
-  .buttons {
-    float: left;
-
-    a {
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      @include border-radius(50%);
-
-      &.green {
-        @include button(#7DB76A, #BDE5A8);
-      }
-
-      &.orange {
-        @include button(#F5BA66, #FDE9A5);
-      }
-
-      &.red {
-        @include button(#FF615F, #FFAFAD);
-      }
     }
   }
 }
