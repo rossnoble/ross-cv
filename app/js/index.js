@@ -25869,7 +25869,7 @@ var Vimulator = function () {
   };
 
   this._bindDocumentSelect = function () {
-    this.$doc.click(function () {
+    this.$doc.mousedown(function () {
       self.$doc.toggleClass('is-selected');
     });
 
