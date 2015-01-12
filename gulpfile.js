@@ -8,6 +8,16 @@ gulp.task('default', function () {
       'bower_components/jquery-ui/jquery-ui.js',
       'lib/main.js'
     ])
+    .pipe(concat('index.js'))
+    .pipe(gulp.dest('./app/js'));
+});
+
+gulp.task('production', function () {
+  gulp.src([
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/jquery-ui/jquery-ui.js',
+      'lib/main.js'
+    ])
     .pipe(uglify())
     .pipe(concat('index.js'))
     .pipe(gulp.dest('./app/js'));

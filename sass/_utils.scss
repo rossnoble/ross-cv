@@ -54,6 +54,13 @@ $radius: 4px;
           border-radius: $radius;
 }
 
+@mixin user-select($value) {
+  -webkit-user-select: $value;
+   -khtml-user-select: $value;
+     -moz-user-select: $value;
+      -ms-user-select: $value;
+}
+
 @function black($opacity) {
   @return rgba(0, 0, 0, $opacity);
 }

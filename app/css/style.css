@@ -64,15 +64,20 @@ html {
   background-color: black; }
 
 body {
-  background-image: url("/img/waves.jpg");
-  background-size: cover;
   padding: 0;
   margin: 0;
   font-family: Menlo, Monaco, Courier, sans;
   font-size: 13px;
   line-height: 1.25;
   color: #eaeaea;
-  min-height: 700px; }
+  height: 100%; }
+
+.container {
+  position: relative;
+  height: auto !important;
+  min-height: 100%;
+  background-image: url("/img/waves.jpg");
+  background-size: cover; }
 
 h1, h2, h3, p, li {
   margin: 0;
@@ -104,21 +109,22 @@ ul {
       color: #7c81cd; }
 
 a {
-  color: #f0ca86;
+  color: #faa7f3;
   font-weight: bold;
   text-decoration: none; }
   a:hover {
-    background-color: #eab659;
-    color: #f8e8ca;
-    background-color: #fbf2e1;
-    color: #db961b; }
+    border-bottom: 1px solid #faa7f3; }
 
 .document {
   text-align: center;
   width: 120px;
   position: relative;
   left: 15px;
-  top: 15px; }
+  top: 15px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
   .document .icon {
     background: url("/img/document.png") center center no-repeat;
     width: 46px;
@@ -135,7 +141,8 @@ a {
     font-weight: bold;
     text-shadow: 0 1px 1px black;
     color: white;
-    padding: 1px 3px; }
+    padding: 1px 3px;
+    letter-spacing: -0.5px; }
   .document.is-selected .icon-wrapper {
     border: 2px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(0, 0, 0, 0.4);
@@ -259,6 +266,9 @@ a {
       background-color: #777777;
       color: white; }
 
+.hidden {
+  display: none; }
+
 .cursor {
   background-color: #777777;
   width: 7px;
@@ -274,7 +284,10 @@ a {
 @media only screen and (max-width: 800px) {
   body {
     -webkit-text-size-adjust: none;
-    min-height: none; }
+    min-height: 0; }
+
+  .document {
+    display: none; }
 
   .terminal {
     width: 100%;
@@ -304,4 +317,6 @@ a {
     .terminal .status-line {
       background-color: black;
       position: fixed;
-      margin: 0; } }
+      margin: 0; }
+    .terminal.hidden {
+      display: block; } }

@@ -10,15 +10,21 @@ html {
 }
 
 body {
-  background-image: url('/img/waves.jpg');
-  background-size: cover;
   padding: 0;
   margin : 0;
   font-family: $font-mono;
   font-size: $font-medium;
   line-height: $line-height;
   color: $white;
-  min-height: 700px;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  height: auto !important;
+  min-height: 100%;
+  background-image: url('/img/waves.jpg');
+  background-size: cover;
 }
 
 h1, h2, h3, p, li {
@@ -64,15 +70,12 @@ ul {
 }
 
 a {
-  color: $gold;
+  color: $pink;
   font-weight: bold;
   text-decoration: none;
 
   &:hover {
-    background-color: darken($gold, 10%);
-    color: lighten($gold, 15%);
-    background-color: lighten($gold, 20%);
-    color: darken($gold, 25%);
+    border-bottom: 1px solid $pink;
   }
 }
 
@@ -85,6 +88,7 @@ a {
   position: relative;
   left: 15px;
   top: 15px;
+  @include user-select(none);
 
   .icon {
     background: url('/img/document.png') center center no-repeat;
@@ -107,6 +111,7 @@ a {
     text-shadow: 0 1px 1px black;
     color: white;
     padding: 1px 3px;
+    letter-spacing: -0.5px;
   }
 
   &.is-selected {
@@ -250,6 +255,10 @@ a {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .cursor {
   background-color: $grey;
   width: 7px;
@@ -266,7 +275,11 @@ a {
 @media only screen and (max-width: 800px) {
   body {
     -webkit-text-size-adjust: none;
-    min-height: none;
+    min-height: 0;
+  }
+
+  .document {
+    display: none;
   }
 
   .terminal {
@@ -287,6 +300,10 @@ a {
       background-color: $black;
       position: fixed;
       margin: 0;
+    }
+
+    &.hidden {
+      display: block;
     }
   }
 }
