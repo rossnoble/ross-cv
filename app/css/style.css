@@ -159,7 +159,7 @@ a {
   background: black;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
-  top: 60px;
+  top: 70px;
   left: 50%;
   margin-left: -350px;
   -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
@@ -186,6 +186,8 @@ a {
       margin-top: 26px; }
     .terminal.fullscreen .status-line {
       margin-bottom: 26px; }
+  .terminal.ui-draggable-disabled .terminal-header {
+    cursor: default; }
 
 .terminal-header {
   background-color: #EEEEEE;
@@ -195,7 +197,7 @@ a {
   text-align: center;
   color: #515151;
   text-shadow: 0 1px 0 white;
-  cursor: default; }
+  cursor: move; }
   .terminal-header .buttons {
     float: left; }
     .terminal-header .buttons a {
