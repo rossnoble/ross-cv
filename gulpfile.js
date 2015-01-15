@@ -6,7 +6,7 @@ gulp.task('default', function () {
   gulp.src([
       'bower_components/jquery/dist/jquery.js',
       'bower_components/jquery-ui/jquery-ui.js',
-      'lib/main.js'
+      'lib/*.js'
     ])
     .pipe(concat('index.js'))
     .pipe(gulp.dest('./app/js'));
@@ -16,7 +16,7 @@ gulp.task('production', function () {
   gulp.src([
       'bower_components/jquery/dist/jquery.js',
       'bower_components/jquery-ui/jquery-ui.js',
-      'lib/main.js'
+      'lib/*.js'
     ])
     .pipe(uglify())
     .pipe(concat('index.js'))

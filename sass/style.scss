@@ -224,7 +224,7 @@ a {
   }
 
   .vim-body {
-    padding: 5px 0 0 35px;
+    padding: 5px;
   }
 
   .numbers {
@@ -234,6 +234,28 @@ a {
     left: 0;
     color: $grey;
     text-align: right;
+    display: none;
+  }
+
+  .num {
+    display: inline-block;
+    color: $grey;
+    width: 20px;
+    text-align: right;
+    margin-right: 10px;
+
+    &.blank {
+      text-align: left;
+      margin-left: -5px;
+    }
+  }
+
+  .line {
+    display: inline;
+
+    h1, h2, h3, p, li {
+      display: inline;
+    }
   }
 
   .no-content {

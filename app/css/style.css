@@ -245,14 +245,28 @@ a {
     width: 100%;
     height: 100%; }
   .vim .vim-body {
-    padding: 5px 0 0 35px; }
+    padding: 5px; }
   .vim .numbers {
     position: absolute;
     padding: 5px 5px 5px 10px;
     top: 0;
     left: 0;
     color: #777777;
-    text-align: right; }
+    text-align: right;
+    display: none; }
+  .vim .num {
+    display: inline-block;
+    color: #777777;
+    width: 20px;
+    text-align: right;
+    margin-right: 10px; }
+    .vim .num.blank {
+      text-align: left;
+      margin-left: -5px; }
+  .vim .line {
+    display: inline; }
+    .vim .line h1, .vim .line h2, .vim .line h3, .vim .line p, .vim .line li {
+      display: inline; }
   .vim .no-content {
     color: #777777; }
   .vim .status-line {
