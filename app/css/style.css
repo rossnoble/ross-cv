@@ -306,6 +306,7 @@ a {
     display: none; }
 
   .terminal {
+    display: block !important;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -333,6 +334,4 @@ a {
     .terminal .status-line {
       background-color: black;
       position: fixed;
-      margin: 0; }
-    .terminal.hidden {
-      display: block; } }
+      margin: 0; } }

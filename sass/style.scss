@@ -309,6 +309,7 @@ a {
   }
 
   .terminal {
+    display: block !important;
     @include fullscreen();
     @include border-radius(0);
 
@@ -326,10 +327,6 @@ a {
       background-color: $black;
       position: fixed;
       margin: 0;
-    }
-
-    &.hidden {
-      display: block;
     }
   }
 }
