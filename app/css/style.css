@@ -76,7 +76,7 @@ body {
   position: relative;
   height: auto !important;
   min-height: 100%;
-  background-image: url("/img/waves.jpg");
+  background-image: url("/img/denali.jpg");
   background-size: cover; }
 
 h1, h2, h3, p, li {
@@ -101,12 +101,13 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none; }
-  ul li {
-    font-size: 13px;
-    line-height: 1.25; }
-    ul li:before {
-      content: "\0002A" "\000A0";
-      color: #7c81cd; }
+
+li {
+  font-size: 13px;
+  line-height: 1.25; }
+  li:before {
+    content: "\0002A" "\000A0";
+    color: #7c81cd; }
 
 a {
   color: #faa7f3;
@@ -171,9 +172,9 @@ a {
     width: 100%;
     height: 100%;
     margin: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
     position: fixed; }
     .terminal.fullscreen .vim {
       width: 100%;
@@ -310,9 +311,9 @@ a {
     width: 100%;
     height: 100%;
     margin: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
     position: fixed;
     -webkit-border-radius: 0;
     border-radius: 0; }
