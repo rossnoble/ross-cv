@@ -168,6 +168,10 @@ a {
 
   &.fullscreen {
     @include fullscreen;
+
+    .vim-body {
+      margin-top: 25px;
+    }
   }
 
   &.ui-draggable-disabled .terminal-header {
@@ -186,6 +190,8 @@ a {
   text-shadow: 0 1px 0 white;
   cursor: move;
   white-space: nowrap;
+  position: relative;
+  z-index: 1000;
 
   .buttons {
     float: left;

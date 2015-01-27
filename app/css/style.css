@@ -257,6 +257,8 @@ a {
       right: 0;
       left: 0;
       top: 0; }
+    .terminal.fullscreen .vim-body {
+      margin-top: 25px; }
   .terminal.ui-draggable-disabled .terminal-header {
     cursor: default; }
 
@@ -269,7 +271,9 @@ a {
   color: #515151;
   text-shadow: 0 1px 0 white;
   cursor: move;
-  white-space: nowrap; }
+  white-space: nowrap;
+  position: relative;
+  z-index: 1000; }
   .terminal-header .buttons {
     float: left; }
     .terminal-header .buttons a {
