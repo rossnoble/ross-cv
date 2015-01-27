@@ -27,7 +27,7 @@ body {
   background-size: cover;
 }
 
-h1, h2, h3, p, li {
+h1, h2, h3, p, li, .li {
   margin: 0;
   font-size: $font-medium;
   line-height: $line-height;
@@ -59,7 +59,8 @@ ul {
   list-style: none;
 }
 
-li {
+li, .li {
+  display: inline-block;
   font-size: $font-medium;
   line-height: $line-height;
 
