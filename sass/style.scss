@@ -219,7 +219,7 @@ a {
 
 .vim {
   position: absolute;
-  overflow: scroll;
+  overflow: hidden;
   cursor: text;
 
   &.fullscreen {
