@@ -4,9 +4,9 @@ var concat = require('gulp-concat');
 
 gulp.task('default', function () {
   gulp.src([
-      './bower_components/jquery/dist/jquery.js',
-      './bower_components/jquery-ui/jquery-ui.js',
-      './lib/*.js'
+      './node_modules/jquery/dist/jquery.js',
+      './node_modules/jquery-ui-dist/jquery-ui.js',
+      './js/*.js'
     ])
     .pipe(uglify())
     .pipe(concat('index.js'))
