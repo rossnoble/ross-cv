@@ -10,5 +10,5 @@ gulp.task('default', function () {
     ])
     .pipe(uglify())
     .pipe(concat('index.js'))
-    .pipe(gulp.dest('./app/js'));
+    .pipe(gulp.dest('./public'));
 });
