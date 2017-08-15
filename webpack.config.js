@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   devtool: 'source-map',
   entry:  __dirname + "/app/main.js",
@@ -5,6 +7,7 @@ module.exports = {
     path: __dirname + "/public",
     filename: "bundle.js"
   },
+
   module: {
     loaders: [
       {
@@ -15,9 +18,18 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$|\.scss$/,
+        loader: 'style-loader!css-loader!sass-loader'
       }
     ]
   },
+
+  plugins: [
+    new webpack.BannerPlugin('Built with love by Ross Noble.\ngithub.com/rossnoble\n\n')
+  ],
+
   devServer: {
     contentBase: "./public",
     compress: true,
