@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -27,7 +28,10 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.BannerPlugin('Built with love by Ross Noble.\ngithub.com/rossnoble\n\n')
+    new webpack.BannerPlugin('Built with love by Ross Noble.\ngithub.com/rossnoble\n\n'),
+    new HtmlWebpackPlugin({
+      template: __dirname + '/app/index.tmpl.html'
+    })
   ],
 
   devServer: {
