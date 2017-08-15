@@ -4,7 +4,7 @@ import config from './config.json'
 class Greeter extends Component {
   render () {
     return (
-      <div>{config.greetText}</div>
+      <div>{config.greetText}, {config.name}!</div>
     )
   }
 }

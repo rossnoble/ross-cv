@@ -31,13 +31,15 @@ module.exports = {
     new webpack.BannerPlugin('Built with love by Ross Noble.\ngithub.com/rossnoble\n\n'),
     new HtmlWebpackPlugin({
       template: __dirname + '/app/index.tmpl.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
 
   devServer: {
     contentBase: "./public",
     compress: true,
     historyApiFallback: true,
-    inline: true
+    inline: true,
+    hot: true,
   }
 }
