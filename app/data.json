@@ -1,0 +1,13 @@
+{
+  "name": "Ross Haliburton Noble",
+  "about": {
+    "title": "About / Work",
+    "description": "Software developer from Vancouver, BC",
+    "employers": [
+      ["Rock Sauce Studios", "http://www.rocksaucestudios.com"],
+      ["Intel", "http://www.intel.com"],
+      ["PasswordBox", "https://www.passwordbox.com"],
+      ["Le Site", "https://www.lesite.ca"]
+    ]
+  }
+}

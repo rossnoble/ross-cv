@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Greeter from './Greeter';
+import App from './components/App';
 
-import './scss/style.scss';
+// Global styles for now
+import './styles/style.scss';
 
-render(<Greeter />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
