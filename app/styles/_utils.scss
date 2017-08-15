@@ -1,28 +1,3 @@
-// Colors
-$green  : #01A533;
-$white  : #EAEAEA;
-$black  : #000000;
-$teal   : #48F3F3;
-$violet : #7C81CD;
-$cyan   : #5ED1ED;
-$pink   : #FAA7F3;
-$grey   : #777777;
-$blue   : #86B0F0;
-$gold   : #F0CA86;
-
-// Symbols
-$asterisk: "\0002A";
-$hash: "\00023";
-$space: "\000A0";
-
-// Fonts
-$font-medium: 13px;
-$line-height: 1.25;
-$font-mono: Menlo, Monaco, Courier, sans;
-
-// Other
-$radius: 4px;
-
 // Mixins
 @-webkit-keyframes flash {
   0%, 100% {
@@ -44,6 +19,18 @@ $radius: 4px;
   }
 }
 
+// FUNCTIONS
+
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity);
+}
+
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
+
+// MIXINS
+
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
           box-shadow: $shadow;
@@ -61,14 +48,6 @@ $radius: 4px;
       -ms-user-select: $value;
 }
 
-@function black($opacity) {
-  @return rgba(0, 0, 0, $opacity);
-}
-
-@function white($opacity) {
-  @return rgba(255, 255, 255, $opacity);
-}
-
 @mixin button($from-color, $to-color) {
   background-color: lighten($from-color, 8%);
   background-image: linear-gradient(to top, 
@@ -84,3 +63,11 @@ $radius: 4px;
   }
 }
 
+// https://coderwall.com/p/w-e9rq/sass-retina-background-mixin
+@mixin retina-background-image($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+  @media #{$retina} {
+    background-image: url($file + '@2x.' + $type);
+    @include background-size($width, $height);
+  }
+}
