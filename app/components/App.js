@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import data from '../data.json'
 import Document from './Document'
+import Terminal from './Terminal'
+import data from '../data.json'
 
 // Background images
 import mountHood from '../images/mount-hood.jpg';
@@ -8,9 +9,9 @@ import mountJefferson from '../images/mount-jefferson.jpg';
 import southOregon from '../images/south-oregon.jpg';
 
 const backgrounds = [
-  // mountHood,
+  mountHood,
   // mountJefferson,
-  southOregon,
+  // southOregon,
 ];
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
     const index = Math.floor(Math.random() * max);
     const image = backgrounds[index];
 
-    return `url('${image}')`;
+    return `url(${image})`;
   }
 
   render () {
@@ -29,6 +30,7 @@ class App extends Component {
     return (
       <div className="container" style={style}>
         <Document />
+        <Terminal />
       </div>
     )
   }

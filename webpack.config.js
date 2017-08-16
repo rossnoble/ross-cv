@@ -10,7 +10,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.json$/,
         loader: 'json-loader'
@@ -22,14 +22,29 @@ module.exports = {
       },
       {
         test: /\.css$|\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'file-loader?name=[name].[ext]',
-            options: {}
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
           }
         ]
       }
