@@ -1,0 +1,27 @@
+@import 'globals';
+@import 'mixins';
+
+.Vim {
+  // position: absolute;
+  // overflow: hidden;
+  cursor: text;
+  font-family: $fontFamily-mono;
+  font-size: $fontSize-small;
+}
+
+.StatusBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zIndex-2;
+}
+
+.StatusTop {
+  color: $color-aqua;
+  background-color: $color-charcoal;
+}
+
+.StatusBottom {
+  color: $color-grey;
+}

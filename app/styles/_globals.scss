@@ -8,6 +8,7 @@ $color-black:    #000000;
 $color-pink:     #FAA7F3;
 $color-blue:     #0269D9;
 $color-teal:     #48F3F3;
+$color-aqua:     #4DFBAF;
 $color-violet:   #7C81CD;
 $color-green:    #28CA41;
 $color-orange:   #FFBE2F;
@@ -19,11 +20,13 @@ $hash:     "\00023";
 $space:    "\000A0";
 
 // Fonts
-$fontSize-medium: 0.875rem;
-$fontSize-small:  0.75rem;
+$fontFamily-sans: "Helvetica Neue", Arial, sans;
+$fontFamily-mono: Menlo, Monaco, Courier, sans;
+
+$fontSize-medium: 0.875rem; // 14px
+$fontSize-small:  0.75rem;  // 12px
 
 $line-height: 1.25;
-$font-mono: "Helvetica Neue", Menlo, Monaco, Courier, sans;
 
 // Other
 $radius: 4px;

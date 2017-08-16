@@ -1,17 +1,3 @@
-.terminal {
-  &.fullscreen {
-    // @include fullscreen;
-
-    .vim-body {
-      margin-top: 25px;
-    }
-  }
-
-  &.ui-draggable-disabled .terminal-header {
-    cursor: default;
-  }
-}
-
 .vim {
   position: absolute;
   overflow: hidden;
@@ -61,29 +47,6 @@
     color: $color-grey;
   }
 
-}
-
-.status-line {
-  padding: 3px;
-  background-color: $color-black;
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  width: 100%;
-
-  .first {
-    font-size: $fontSize-medium;
-    background-color: $color-grey;
-    color: white;
-  }
-
-  .second {
-    background-color: $color-black;
-  }
-}
-
-.hidden {
-  display: none;
 }
 
 .cursor {

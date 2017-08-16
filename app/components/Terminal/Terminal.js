@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from './Button/Button'
+import Vim from './Vim/Vim'
 import data from 'app/data.json'
 import css from './Terminal.scss'
 
@@ -29,7 +30,7 @@ class Terminal extends Component {
         </div>
 
         <div className={css.Body}>
-          hello
+          <Vim />
         </div>
       </div>
     )

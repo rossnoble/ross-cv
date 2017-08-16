@@ -17,7 +17,7 @@ $height: 500px;
 
 .Header {
   display: flex;
-  position: relative;
+  // position: relative;
   z-index: $zIndex-3;
   background-color: $color-smoke;
   background-image: linear-gradient(to top, $color-smoke, lighten($color-smoke, 10%));
@@ -35,8 +35,7 @@ $height: 500px;
 
 .Body {
   height: $height;
-  background: $color-black;
-  background-color: black(0.7);
+  background-color: black(0.5);
 }
 
 .Title {
