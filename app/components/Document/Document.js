@@ -42,15 +42,14 @@ class Document extends Component {
   handleDoubleClick (e) {
     console.log('click double')
 
-    alert('open vimulator!')
+    alert('open terminal!')
   }
 
   render () {
-    // TODO: Create a helper method to handle this
-    const classOpts = {}
-    classOpts[css.Document] = true
-    classOpts[css.Document__isSelected] = this.state.selected
-    const className = classNames(classOpts)
+    const className = classNames({
+      [`${css.Document}`]: true,
+      [`${css.Document__isSelected}`]: this.state.selected
+    })
 
     return (
       <div

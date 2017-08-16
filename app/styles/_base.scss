@@ -3,7 +3,7 @@
 }
 
 html {
-  background-color: $black;
+  background-color: $color-black;
 }
 
 body {
@@ -12,34 +12,34 @@ body {
   font-family: $font-mono;
   font-size: 16px;
   line-height: $line-height;
-  color: $white;
+  color: $color-white;
   height: 100%;
 }
 
 h1, h2, h3, p, li, .li {
   margin: 0;
-  font-size: $font-medium;
+  font-size: $fontSize-medium;
   line-height: $line-height;
-  color: $white;
+  color: $color-white;
 }
 
 h1 {
   &:before {
     content: $hash $space;
-    color: $teal;
+    color: $color-teal;
   }
 }
 
 h2 {
   &:before {
     content: $hash $hash $space;
-    color: $teal;
+    color: $color-teal;
   }
 }
 
 p {
   margin: 0;
-  font-size: $font-medium;
+  font-size: $fontSize-medium;
 }
 
 ul {
@@ -50,22 +50,22 @@ ul {
 
 li, .li {
   display: inline-block;
-  font-size: $font-medium;
+  font-size: $fontSize-medium;
   line-height: $line-height;
 
   &:before {
     content: $asterisk $space;
-    color: $violet;
+    color: $color-violet;
   }
 }
 
 a {
-  color: $pink;
+  color: $color-pink;
   font-weight: bold;
   text-decoration: none;
 
   &:hover {
-    border-bottom: 1px solid $pink;
+    border-bottom: 1px solid $color-pink;
   }
 }
 
@@ -117,7 +117,7 @@ a {
     }
 
     .status-line {
-      background-color: $black;
+      background-color: $color-black;
       position: fixed;
       margin: 0;
     }

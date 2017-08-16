@@ -1,27 +1,24 @@
 // Colors
-$green  : #01A533;
-$white  : #EAEAEA;
-$black  : #000000;
-$teal   : #48F3F3;
-$violet : #7C81CD;
-$cyan   : #5ED1ED;
-$pink   : #FAA7F3;
-$grey   : #777777;
-$blue   : #86B0F0;
-$gold   : #F0CA86;
+$color-white:    #FFFFFF;
+$color-smoke:    #F2F2F2;
+$color-grey:     #BDBDBD;
+$color-charcoal: #2B2B2B;
+$color-black:    #000000;
 
-$color-white: #FFFFFF;
-$color-blue:  #0269D9;
+$color-green:    #01A533;
+$color-pink:     #FAA7F3;
+$color-blue:     #0269D9;
+$color-teal:     #48F3F3;
+$color-violet:   #7C81CD;
 
 // Symbols
 $asterisk: "\0002A";
-$hash: "\00023";
-$space: "\000A0";
+$hash:     "\00023";
+$space:    "\000A0";
 
 // Fonts
-$font-large: 1.25rem;
-$font-medium: 0.875rem;
-$fontSize-small: 0.75rem;
+$fontSize-medium: 0.875rem;
+$fontSize-small:  0.75rem;
 
 $line-height: 1.25;
 $font-mono: "Helvetica Neue", Menlo, Monaco, Courier, sans;
@@ -31,10 +28,15 @@ $radius: 4px;
 $radius-small: 4px;
 
 // Padding units
-$p1: calc(1rem/8);
-$p2: calc(1rem/4);
-$p3: calc(1rem/2);
-$p4: calc(1rem);
-$p5: calc(1rem * 2);
-$p6: calc(1rem * 4);
-$p7: calc(1rem * 8);
+$p1: (1rem/8);
+$p2: (1rem/4);
+$p3: (1rem/2);
+$p4: (1rem);
+$p5: (1rem * 2);
+$p6: (1rem * 4);
+$p7: (1rem * 8);
+
+// Z-index
+$zIndex-1: 100;
+$zIndex-2: 200;
+$zIndex-3: 300;

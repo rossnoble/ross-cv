@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
 import data from 'app/data.json'
+import css from './Terminal.scss'
 
 class Terminal extends Component {
   render () {
     return (
-      <div
-        className="terminal"
-      >
-        <div className="terminal-header">
-          <div className="buttons">
+      <div className={css.Terminal}>
+        <div className={css.Header}>
+          <div className={css.Buttons}>
             <a href="#" className="red js-close">&nbsp;</a>
             <a href="#" className="orange js-minimize">&nbsp;</a>
             <a href="#" className="green js-fullscreen">&nbsp;</a>
           </div>
-          <span className="title">1. vim</span>
+          <span className={css.Title}>1. vim</span>
         </div>
 
         <div className="terminal-body">
