@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,6 +8,14 @@ module.exports = {
   output: {
     path: __dirname + "/public",
     filename: "bundle.js"
+  },
+
+  resolve: {
+    alias: {
+      app:    path.resolve(__dirname, 'app'),
+      comps:  path.resolve(__dirname, 'app/components'),
+      images: path.resolve(__dirname, 'app/images')
+    }
   },
 
   module: {

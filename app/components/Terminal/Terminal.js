@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import data from '../data.json'
+import data from 'app/data.json'
 
 class Terminal extends Component {
   render () {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import data from '../data.json'
+import data from 'app/data.json'
 
 class Document extends Component {
   constructor (props) {

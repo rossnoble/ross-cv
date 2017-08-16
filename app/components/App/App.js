@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Document from './Document'
-import Terminal from './Terminal'
-import data from '../data.json'
+import Document from 'comps/Document/Document'
+import Terminal from 'comps/Terminal/Terminal'
+import data from 'app/data.json'
 
 // Background images
-import mountHood from '../images/mount-hood.jpg';
-import mountJefferson from '../images/mount-jefferson.jpg';
-import southOregon from '../images/south-oregon.jpg';
+import mountHood from 'images/mount-hood.jpg';
+import mountJefferson from 'images/mount-jefferson.jpg';
+import southOregon from 'images/south-oregon.jpg';
 
 const backgrounds = [
   mountHood,
