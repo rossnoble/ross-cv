@@ -5,10 +5,12 @@ import Document from './Document'
 // Background images
 import mountHood from '../images/mount-hood.jpg';
 import mountJefferson from '../images/mount-jefferson.jpg';
+import southOregon from '../images/south-oregon.jpg';
 
 const backgrounds = [
-  mountHood,
+  // mountHood,
   // mountJefferson,
+  southOregon,
 ];
 
 class App extends Component {
