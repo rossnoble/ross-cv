@@ -2,18 +2,16 @@
 @import 'mixins';
 
 $width: 700px;
-$height: 520px;
+$height: 500px;
 
 .Terminal {
-  background: $color-black;
-  background-color: black(0.7);
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 50%;
   width: $width;
-  height: $height;
   margin-left: ($width / -2);
-  border-radius: $radius-small $radius-small 0 0;
+  border-radius: $radius-small;
+  overflow: hidden;
   box-shadow: 0 15px 30px 6px black(0.35);
 }
 
@@ -24,7 +22,7 @@ $height: 520px;
   background-color: $color-smoke;
   background-image: linear-gradient(to top, $color-smoke, lighten($color-smoke, 10%));
   line-height: 1;
-  padding: $p2;
+  padding: 0.3rem 0.45rem;
   cursor: move;
   text-align: center;
   color: lighten($color-charcoal, 25%);
@@ -32,31 +30,21 @@ $height: 520px;
   white-space: nowrap;
   font-size: $fontSize-medium;
   border-radius: $radius-small $radius-small 0 0;
+  // border-bottom: 1px solid lighten($color-grey, 5%);
+}
+
+.Body {
+  height: $height;
+  background: $color-black;
+  background-color: black(0.7);
 }
 
 .Title {
   flex: 1;
+  padding-right: 55px; // Roughtly centered
 }
 
 .Buttons {
   float: left;
-}
-
-.Button {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  @include border-radius(50%);
-
-  &.green {
-    @include button(#7DB76A, #BDE5A8);
-  }
-
-  &.orange {
-    @include button(#F5BA66, #FDE9A5);
-  }
-
-  &.red {
-    @include button(#FF615F, #FFAFAD);
-  }
+  display: flex;
 }

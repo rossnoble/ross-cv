@@ -1,16 +1,4 @@
 .terminal {
-  background: $color-black;
-  background-color: black(0.7);
-  position: absolute;
-  top: 70px;
-  left: 50%;
-  width: 700px;
-  height: 520px;
-  margin-left: -350px;
-  @include box-shadow(0 10px 30px -5px black(0.7));
-  @include border-radius($radius);
-  overflow: hidden;
-
   &.fullscreen {
     // @include fullscreen;
 
@@ -21,44 +9,6 @@
 
   &.ui-draggable-disabled .terminal-header {
     cursor: default;
-  }
-}
-
-.terminal-header {
-  background-color: #EEEEEE;
-  background-image: linear-gradient(to top,
-    #CCCCCC, #F6F6F6);
-  line-height: 1;
-  padding: 5px 60px 5px 8px;
-  text-align: center;
-  color: darken($color-grey, 15%);
-  text-shadow: 0 1px 0 $color-white;
-  cursor: move;
-  white-space: nowrap;
-  position: relative;
-  z-index: 1000;
-
-  .buttons {
-    float: left;
-
-    a {
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      @include border-radius(50%);
-
-      &.green {
-        @include button(#7DB76A, #BDE5A8);
-      }
-
-      &.orange {
-        @include button(#F5BA66, #FDE9A5);
-      }
-
-      &.red {
-        @include button(#FF615F, #FFAFAD);
-      }
-    }
   }
 }
 

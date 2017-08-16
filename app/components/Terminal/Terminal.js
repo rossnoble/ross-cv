@@ -1,21 +1,34 @@
 import React, { Component } from 'react'
+import Button from './Button/Button'
 import data from 'app/data.json'
 import css from './Terminal.scss'
 
 class Terminal extends Component {
+  close (e) {
+    console.log('close')
+  }
+
+  minimize (e) {
+    console.log('minimize')
+  }
+
+  fullscreen (e) {
+    console.log('fullscreen')
+  }
+
   render () {
     return (
       <div className={css.Terminal}>
         <div className={css.Header}>
           <div className={css.Buttons}>
-            <a href="#" className="red js-close">&nbsp;</a>
-            <a href="#" className="orange js-minimize">&nbsp;</a>
-            <a href="#" className="green js-fullscreen">&nbsp;</a>
+            <Button color="red" onClick={this.close}>×</Button>
+            <Button color="orange" onClick={this.minimize}>‐</Button>
+            <Button color="green" onClick={this.fullscreen}>+</Button>
           </div>
           <span className={css.Title}>1. vim</span>
         </div>
 
-        <div className="terminal-body">
+        <div className={css.Body}>
           hello
         </div>
       </div>
