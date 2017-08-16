@@ -10,6 +10,9 @@ $grey   : #777777;
 $blue   : #86B0F0;
 $gold   : #F0CA86;
 
+$color-white: #FFFFFF;
+$color-blue:  #0269D9;
+
 // Symbols
 $asterisk: "\0002A";
 $hash: "\00023";
@@ -25,3 +28,13 @@ $font-mono: "Helvetica Neue", Menlo, Monaco, Courier, sans;
 
 // Other
 $radius: 4px;
+$radius-small: 4px;
+
+// Padding units
+$p1: calc(1rem/8);
+$p2: calc(1rem/4);
+$p3: calc(1rem/2);
+$p4: calc(1rem);
+$p5: calc(1rem * 2);
+$p6: calc(1rem * 4);
+$p7: calc(1rem * 8);

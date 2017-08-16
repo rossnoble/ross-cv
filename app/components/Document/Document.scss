@@ -1,0 +1,50 @@
+@import 'globals';
+@import 'mixins';
+
+.Document {
+  text-align: center;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  left: 20px;
+  top: 20px;
+  @include user-select(none);
+}
+
+.IconWrapper {
+  border: 2px solid transparent;
+  padding: 6px 10px;
+  line-height: 0;
+  margin-bottom: 2px;
+}
+
+.Filename {
+  display: inline-block;
+  font-weight: bold;
+  font-size: $fontSize-small;
+  text-shadow: 0 1px 2px black(0.4);
+  color: $color-white;
+  padding: $p1 $p2;
+}
+
+.Icon {
+  background: url('images/document.png') center center no-repeat;
+  width: 46px;
+  height: 59px;
+  display: inline-block;
+}
+
+// Active state
+.Document__isSelected {
+  .IconWrapper {
+    border: 2px solid white(0.2);
+    background-color: black(0.5);
+    border-radius: $radius-small;
+  }
+
+  .Filename {
+    background-color: $color-blue;
+    border-radius: $radius-small;
+  }
+}

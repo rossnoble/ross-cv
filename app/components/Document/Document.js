@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import data from 'app/data.json'
+import css from './Document.scss'
 
 class Document extends Component {
   constructor (props) {
@@ -45,9 +46,11 @@ class Document extends Component {
   }
 
   render () {
-    const className = classNames('document', {
-      'is-selected': this.state.selected
-    })
+    // TODO: Create a helper method to handle this
+    const classOpts = {}
+    classOpts[css.Document] = true
+    classOpts[css.Document__isSelected] = this.state.selected
+    const className = classNames(classOpts)
 
     return (
       <div
@@ -55,10 +58,10 @@ class Document extends Component {
         onClick={this.handleClick}
         onDoubleClick={this.handleDoubleClick}
       >
-        <div className="icon-wrapper">
-          <div className="icon"></div>
+        <div className={css.IconWrapper}>
+          <div className={css.Icon}></div>
         </div>
-        <div className="filename">{data.filename}</div>
+        <div className={css.Filename}>{data.filename}</div>
       </div>
     )
   }

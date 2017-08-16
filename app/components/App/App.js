@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Document from 'comps/Document/Document'
 import Terminal from 'comps/Terminal/Terminal'
 import data from 'app/data.json'
+import css from './App.scss'
 
 // Background images
 import mountHood from 'images/mount-hood.jpg';
@@ -28,7 +29,7 @@ class App extends Component {
     const style = { backgroundImage: this.getBackground() }
 
     return (
-      <div className="container" style={style}>
+      <div className={css.App} style={style}>
         <Document />
         <Terminal />
       </div>

@@ -38,11 +38,18 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: false,
+              modules: true,
+              sourceMap: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
             }
           },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.resolve(__dirname, 'app/styles')
+              ]
+            }
           }
         ]
       },
