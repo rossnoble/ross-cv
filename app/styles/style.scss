@@ -23,9 +23,8 @@ body {
 
 .container {
   position: relative;
-  height: auto !important;
-  min-height: 100vh;
-  background-image: url('../images/mount-shasta.jpg');
+  height: 100vh;
+  background-position: center;
   background-size: cover;
   overflow: hidden;
 }
