@@ -5,29 +5,26 @@ class Line extends PureComponent {
 
   render () {
     const {
-      children
+      children,
+      kind,
     } = this.props
 
     let body = children
     let tag = null
 
-    // TODO: Refactor!
-    if (children) {
-      const parts = children.split(/([\*\#])+\s?/)
+    // Build header tag
+    const matches = kind && kind.match(/h(\d)/)
+    if (matches) {
+      const count = parseInt(matches[1])
+      const header = Array(count).fill('#').join('')
 
-      if (parts.length > 1) {
-        const prefix = parts[1]
-        body = parts[2]
+      tag = <span className={css.HeaderSymbol}>{header}</span>
+      body = <span className={css.Header}>{body}</span>
+    }
 
-        if (prefix) {
-          if (prefix === "*") {
-            tag = <span className={css.Bullet}>{prefix}</span>
-          } else if (prefix.match(/#/)) {
-            tag = <span className={css.HeaderSymbol}>{prefix}</span>
-            body = <span className={css.Header}>{body}</span>
-          }
-        }
-      }
+    // Build bullet tag
+    if (kind === 'bullet') {
+      tag = <span className={css.Bullet}>*</span>
     }
 
     return (

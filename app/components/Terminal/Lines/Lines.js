@@ -5,12 +5,13 @@ class Lines extends PureComponent {
 
   render () {
     const {
-      children
+      children,
+      type,
     } = this.props
 
     const lines = children.map((child, index) => {
       return (
-        <Line number={index + 1} key={index}>
+        <Line number={index + 1} kind={child.props.kind}>
           {child.props.children}
         </Line>
       )

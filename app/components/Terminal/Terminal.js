@@ -24,10 +24,6 @@ class Terminal extends Component {
     })
   }
 
-  minimize (e) {
-    console.log('minimize')
-  }
-
   toggleFullscreen (e) {
     this.setState({
       fullscreen: !this.state.fullscreen,
@@ -46,7 +42,7 @@ class Terminal extends Component {
         <div className={css.Header}>
           <div className={css.Buttons}>
             <Button color="red" onClick={this.closeWindow}>×</Button>
-            <Button color="orange" onClick={this.minimize}>‐</Button>
+            <Button color="orange" onClick={this.closeWindow}>‐</Button>
             <Button color="green" onClick={this.toggleFullscreen}>+</Button>
           </div>
           <span className={css.Title}>1. vim</span>

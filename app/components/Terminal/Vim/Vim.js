@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import data from 'app/data.json'
+import Link from 'comps/Link/Link'
 import Lines from '../Lines/Lines'
 import Line from '../Line/Line'
 import css from './Vim.scss'
@@ -10,34 +11,57 @@ class Vim extends Component {
     return (
       <div className={css.Vim}>
         <Lines>
-          <div># Ross Haliburton Noble</div>
+          <div kind="h1">Ross Haliburton Noble</div>
           <div></div>
-          <div>## About / Work</div>
+          <div kind="h2">About / Work</div>
           <div></div>
-          <div>* Formerly of PasswordBox, Intel, Rocksauce</div>
-          <div>* Software developer from Vancouver, Canada 🇨🇦 </div>
-          <div>* Ruby, JavaScript, Golang</div>
+          <div kind="bullet">Software developer from Vancouver, Canada 🇨🇦 </div>
+          <div kind="bullet">
+            Employers include {' '}
+            <Link href={data.links.rocksauce}>Rock Sauce Studios</Link>,{' '}
+            <Link href={data.links.intel}>Intel</Link>,{' '}
+            <Link href={data.links.password}>PasswordBox</Link>,{' '}
+            <Link href={data.links.lesite}>LeSite</Link>,{' '}
+            <Link href={data.links.mate1}>Mate1</Link>
+          </div>
+          <div kind="bullet">Ruby, JavaScript, Golang</div>
           <div></div>
-          <div>## Hobbies / Interests</div>
+          <div kind="h2">Hobbies / Interests</div>
           <div></div>
-          <div>* Ultra running 👟</div>
-          <div>* Long-distance hiking (PCT 2016)</div>
-          <div>* Crossword puzzles</div>
-          <div>* Table tennis 🏓</div>
+          <div kind="bullet">
+            <Link href={data.links.pcta}>{"Hiking (PCT '16)"}</Link>
+          </div>
+          <div kind="bullet">
+            <Link href={data.links.strava}>Ultra running</Link> 👟
+          </div>
+          <div kind="bullet">Crossword puzzles</div>
+          <div kind="bullet">Table tennis 🏓</div>
           <div></div>
-          <div>## Projects</div>
+          <div kind="h2">Projects</div>
           <div></div>
-          <div>* PJM Softball</div>
-          <div>* Burnreel</div>
-          <div>* Capital G (now defunct)</div>
-          <div>* Carabiner (now defunct)</div>
+          <div kind="bullet">
+            <a href={data.links.pjmsl}>PJM Softball</a>
+          </div>
+          <div kind="bullet">
+            <a href={data.links.burnreel}>Burnreel</a>
+          </div>
+          <div kind="bullet">Capital G (defunct)</div>
+          <div kind="bullet">Carabiner (defunct)</div>
           <div></div>
-          <div>## Contact / Elsewhere</div>
+          <div kind="h2">Contact / Links</div>
           <div></div>
-          <div>* Instagram</div>
-          <div>* Github</div>
-          <div>* AngelList</div>
-          <div>* Email</div>
+          <div kind="bullet">
+            <Link href={data.links.instagram}>Instagram</Link>
+          </div>
+          <div kind="bullet">
+            <Link href={data.links.github}>Github</Link>
+          </div>
+          <div kind="bullet">
+            <Link href={data.links.angel}>AngelList</Link>
+          </div>
+          <div kind="bullet">
+            <a href={`mailto:${data.links.email}?subject=Hi`}>Email</a>
+          </div>
         </Lines>
 
         <div className={css.StatusBar}>
