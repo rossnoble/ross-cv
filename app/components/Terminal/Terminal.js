@@ -11,7 +11,6 @@ class Terminal extends Component {
 
     this.state = {
       fullscreen: false,
-      visible: true,
     }
 
     this.closeWindow = this.closeWindow.bind(this)
@@ -19,9 +18,9 @@ class Terminal extends Component {
   }
 
   closeWindow (e) {
-    this.setState({
-      visible: !this.state.visible,
-    })
+    // Reset fullscreen state
+    this.setState({ fullscreen: false })
+    this.props.onClose(e)
   }
 
   toggleFullscreen (e) {
@@ -31,7 +30,8 @@ class Terminal extends Component {
   }
 
   render () {
-    const { visible, fullscreen } = this.state
+    const { fullscreen } = this.state
+    const { visible } = this.props
 
     const {
       resizeConfig,
@@ -84,8 +84,8 @@ class Terminal extends Component {
         enableResizing={resizeConfig}
         minWidth={minWidth}
         minHeight={minHeight}
-        ref={c => { this.rnd = c }}
         resizeGrid={resizeGrid}
+        bounds="parent"
         dragHandlerClassName={`.${css.Header}`}
       >
         {body}

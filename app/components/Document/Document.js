@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Rnd from 'react-rnd'
 import classNames from 'classnames'
 import data from 'app/data.json'
 import css from './Document.scss'
@@ -24,8 +25,6 @@ class Document extends Component {
       this.setState({
         selected: false
       })
-
-      console.log('update from body click', this.state.selected)
     }
   }
 
@@ -34,34 +33,31 @@ class Document extends Component {
       this.setState({
         selected: true
       })
-
-      console.log('update from element click', this.state.selected)
     }
   }
 
-  handleDoubleClick (e) {
-    console.log('click double')
-
-    alert('open terminal!')
-  }
-
   render () {
+    const { onDoubleClick } = this.props
+
     const className = classNames({
       [`${css.Document}`]: true,
       [`${css.Document__isSelected}`]: this.state.selected
     })
 
     return (
-      <div
+      <Rnd
+        default={{ x: 40, y: 40 }}
         className={className}
-        onClick={this.handleClick}
-        onDoubleClick={this.handleDoubleClick}
+        extendsProps={{
+          onClick: this.handleClick,
+          onDoubleClick: onDoubleClick
+        }}
       >
         <div className={css.IconWrapper}>
           <div className={css.Icon}></div>
         </div>
         <div className={css.Filename}>{data.filename}</div>
-      </div>
+      </Rnd>
     )
   }
 }
