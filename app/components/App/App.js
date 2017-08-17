@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Document from 'components/Document/Document'
 import Terminal from 'components/Terminal/Terminal'
 import Vim from 'components/Vim/Vim'
+import Link from 'components/shared/Link/Link'
 import data from 'app/data.json'
 import css from './App.scss'
 
@@ -68,6 +69,13 @@ class App extends Component {
         >
           <Vim />
         </Terminal>
+
+        <Link
+          href={data.links.source}
+          className={css.SourceLink}
+        >
+          View on Github
+        </Link>
       </div>
     )
   }

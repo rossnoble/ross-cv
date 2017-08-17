@@ -46,8 +46,9 @@ class Document extends Component {
 
     return (
       <Rnd
-        default={{ x: 40, y: 40 }}
+        default={{ x: 30, y: 30 }}
         className={className}
+        bounds="parent"
         extendsProps={{
           onClick: this.handleClick,
           onDoubleClick: onDoubleClick

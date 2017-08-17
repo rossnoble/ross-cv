@@ -20,13 +20,13 @@
   display: inline-block;
   font-weight: bold;
   font-size: $fontSize-small;
-  text-shadow: 0 2px 6px black(0.6), 0 2px 6px black(0.6);
+  text-shadow: 0 2px 6px black(0.8);
   color: $color-white;
   padding: $p1 $p2;
 }
 
 .Icon {
-  @include retina-background-image('images/document', 'png');
+  @include retina-background-image('../../images/document', 'png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;

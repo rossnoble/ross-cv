@@ -5,11 +5,16 @@ class Link extends PureComponent {
     const {
       children,
       external,
+      className,
       href,
     } = this.props
 
     return (
-      <a href={href} target={external ? '_blank' : ''}>
+      <a
+        href={href}
+        target={external ? '_blank' : ''}
+        className={className}
+      >
         {children}
       </a>
     )
