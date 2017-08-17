@@ -1,13 +1,4 @@
-// Lib
-@import 'jquery-ui';
-
-// Config vars
 @import 'globals';
 @import 'mixins';
-
-// Base styles
 @import 'reset';
 @import 'base';
-
-// Components
-@import 'terminal';

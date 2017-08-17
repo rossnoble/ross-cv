@@ -32,3 +32,19 @@
 a:hover {
   cursor: pointer;
 }
+
+.Cursor {
+  width: 7px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: text-top;
+  background-color: darken($color-grey, 10%);
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}

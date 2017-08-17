@@ -65,6 +65,7 @@ class Vim extends Component {
           </div>
           <div kind="bullet">
             <a href={`mailto:${data.links.email}?subject=Hi`}>Email</a>
+            <div className={css.Cursor} />
           </div>
         </Lines>
 

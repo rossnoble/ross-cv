@@ -8,14 +8,14 @@ import css from './App.scss'
 // Background images
 import imgMountHood from 'images/mount-hood.jpg';
 import imgMountJefferson from 'images/mount-jefferson.jpg';
-import imgSouthOregon from 'images/south-oregon.jpg';
-import imgYosemite from 'images/yosemite.jpg';
+import imgOregon from 'images/south-oregon.jpg';
+import imgTongariro from 'images/tongariro.jpg';
 
 const backgrounds = [
   imgMountHood,
   imgMountJefferson,
-  imgSouthOregon,
-  imgYosemite,
+  imgOregon,
+  imgTongariro,
 ];
 
 class App extends Component {
