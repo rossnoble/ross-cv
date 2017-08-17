@@ -2,11 +2,9 @@
 @import 'mixins';
 
 .Vim {
-  // position: absolute;
-  // overflow: hidden;
   cursor: text;
   font-family: $fontFamily-mono;
-  font-size: $fontSize-small;
+  font-size: $fontSize-medium;
 }
 
 .StatusBar {
@@ -18,12 +16,17 @@
 }
 
 .StatusTop {
+  padding: $p1;
   color: $color-aqua;
   background-color: $color-charcoal;
+  white-space: nowrap;
 }
 
 .StatusBottom {
+  padding: $p1;
   color: $color-grey;
+  background-color: darken($color-charcoal, 15%);
+  white-space: nowrap;
 }
 
 a:hover {

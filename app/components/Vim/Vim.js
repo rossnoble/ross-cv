@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import data from 'app/data.json'
-import Link from 'comps/Link/Link'
-import Lines from '../Lines/Lines'
-import Line from '../Line/Line'
+import Link from 'components/shared/Link/Link'
+import Lines from './Lines/Lines'
+import Line from './Line/Line'
 import css from './Vim.scss'
 
 class Vim extends Component {
@@ -18,10 +18,10 @@ class Vim extends Component {
           <div kind="bullet">Software developer from Vancouver, Canada 🇨🇦 </div>
           <div kind="bullet">
             Employers include {' '}
-            <Link href={data.links.rocksauce}>Rock Sauce Studios</Link>,{' '}
+            <Link href={data.links.rocksauce}>Rock Sauce</Link>,{' '}
             <Link href={data.links.intel}>Intel</Link>,{' '}
             <Link href={data.links.password}>PasswordBox</Link>,{' '}
-            <Link href={data.links.lesite}>LeSite</Link>,{' '}
+            <Link href={data.links.lesite}>Le Site</Link>,{' '}
             <Link href={data.links.mate1}>Mate1</Link>
           </div>
           <div kind="bullet">Ruby, JavaScript, Golang</div>
@@ -40,13 +40,17 @@ class Vim extends Component {
           <div kind="h2">Projects</div>
           <div></div>
           <div kind="bullet">
-            <a href={data.links.pjmsl}>PJM Softball</a>
+            <Link href={data.links.pjmsl}>PJM Softball</Link>
           </div>
           <div kind="bullet">
-            <a href={data.links.burnreel}>Burnreel</a>
+            <Link href={data.links.burnreel}>Burnreel</Link>
           </div>
-          <div kind="bullet">Capital G (defunct)</div>
-          <div kind="bullet">Carabiner (defunct)</div>
+          <div kind="bullet">
+            <Link href={data.links.capitalg}>Capital G</Link> (defunct)
+          </div>
+          <div kind="bullet">
+            <Link href={data.links.carabiner}>Carabiner</Link> (defunct)
+          </div>
           <div></div>
           <div kind="h2">Contact / Links</div>
           <div></div>

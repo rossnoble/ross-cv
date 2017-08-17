@@ -11,7 +11,7 @@ class Lines extends PureComponent {
 
     const lines = children.map((child, index) => {
       return (
-        <Line number={index + 1} kind={child.props.kind}>
+        <Line key={index} number={index + 1} kind={child.props.kind}>
           {child.props.children}
         </Line>
       )

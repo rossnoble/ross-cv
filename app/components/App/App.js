@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Document from 'comps/Document/Document'
-import Terminal from 'comps/Terminal/Terminal'
+import Document from 'components/Document/Document'
+import Terminal from 'components/Terminal/Terminal'
+import Vim from 'components/Vim/Vim'
 import data from 'app/data.json'
 import css from './App.scss'
 
@@ -8,11 +9,13 @@ import css from './App.scss'
 import mountHood from 'images/mount-hood.jpg';
 import mountJefferson from 'images/mount-jefferson.jpg';
 import southOregon from 'images/south-oregon.jpg';
+import yosemite from 'images/yosemite.jpg';
 
 const backgrounds = [
   mountHood,
   // mountJefferson,
   // southOregon,
+  // yosemite,
 ];
 
 class App extends Component {
@@ -31,7 +34,9 @@ class App extends Component {
     return (
       <div className={css.App} style={style}>
         <Document />
-        <Terminal />
+        <Terminal>
+          <Vim />
+        </Terminal>
       </div>
     )
   }

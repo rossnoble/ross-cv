@@ -7,19 +7,21 @@
 }
 
 .LineNumber {
-  flex: 1;
   text-align: right;
   color: darken($color-grey, 10%);
   padding-right: $p3;
+  width: 25px;
+  min-width: 25px;
 }
 
 .Content {
-  flex: 30;
+  flex: 1;
   color: $color-white;
 }
 
 .Header {
-  font-weight: bold;
+  // font-weight: bold;
+  color: $color-grey;
 }
 
 .HeaderSymbol {

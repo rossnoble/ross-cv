@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import Rnd from 'react-rnd'
 import classNames from 'classnames'
 import Button from './Button/Button'
-import Vim from './Vim/Vim'
 import data from 'app/data.json'
 import css from './Terminal.scss'
 
@@ -31,14 +31,29 @@ class Terminal extends Component {
   }
 
   render () {
-    const className = classNames(
-      [`${css.Terminal}`],
-      { [`${css.Terminal__isFullscreen}`]: this.state.fullscreen },
-      { [`${css.Terminal__isVisible}`]: this.state.visible }
-    )
+    const { visible, fullscreen } = this.state
 
-    return (
-      <div className={className}>
+    const {
+      resizeConfig,
+      width,
+      height,
+      minWidth,
+      minHeight,
+      resizeGrid,
+    } = this.props
+
+    const rndConfig = {
+      x: (window.innerWidth / 2) - (width / 2),
+      y: (window.innerHeight / 2) - (height / 2) - 20,
+      width,
+      height
+    }
+
+    // Hidden state on close/minimize
+    if (!visible) return <div />
+
+    const body = (
+      <div>
         <div className={css.Header}>
           <div className={css.Buttons}>
             <Button color="red" onClick={this.closeWindow}>×</Button>
@@ -47,12 +62,53 @@ class Terminal extends Component {
           </div>
           <span className={css.Title}>1. vim</span>
         </div>
-
         <div className={css.Body}>
-          <Vim />
+          {this.props.children}
         </div>
       </div>
     )
+
+    // Fullscreen without drag and resize
+    if (fullscreen) {
+      return (
+        <div className={`${css.Terminal} ${css.Terminal__isFullscreen}`}>
+          {body}
+        </div>
+      )
+    }
+
+    // Normal state with drag and resize
+    return (
+      <Rnd default={rndConfig}
+        className={css.Terminal}
+        enableResizing={resizeConfig}
+        minWidth={minWidth}
+        minHeight={minHeight}
+        ref={c => { this.rnd = c }}
+        resizeGrid={resizeGrid}
+        dragHandlerClassName={`.${css.Header}`}
+      >
+        {body}
+      </Rnd>
+    )
+  }
+}
+
+Terminal.defaultProps = {
+  width: 700,
+  height: 550,
+  minWidth: 200,
+  minHeight: 160,
+  resizeGrid: [15, 15],
+  resizeConfig: {
+    bottom: true,
+    bottomLeft: true,
+    bottomRight: true,
+    left: true,
+    right: true,
+    top: true,
+    topLeft: true,
+    topRight: true
   }
 }
 

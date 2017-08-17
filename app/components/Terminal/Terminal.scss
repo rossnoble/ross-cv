@@ -5,15 +5,9 @@ $width: 700px;
 $height: 500px;
 
 .Terminal {
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  width: $width;
-  margin-left: ($width / -2);
   border-radius: $radius-small;
-  overflow: hidden;
   box-shadow: 0 15px 30px 6px black(0.35);
-  display: none;
+  background-color: black(0.7);
 
   &.Terminal__isFullscreen {
     width: 100%;
@@ -28,15 +22,11 @@ $height: 500px;
       height: 100%;
     }
   }
-
-  &.Terminal__isVisible {
-    display: block;
-  }
 }
 
 .Header {
   display: flex;
-  // position: relative;
+  min-height: 24px;
   z-index: $zIndex-3;
   background-color: $color-smoke;
   background-image: linear-gradient(to top, $color-smoke, lighten($color-smoke, 10%));
@@ -49,13 +39,18 @@ $height: 500px;
   white-space: nowrap;
   font-size: $fontSize-medium;
   border-radius: $radius-small $radius-small 0 0;
-  // border-bottom: 1px solid lighten($color-grey, 5%);
 }
 
 .Body {
-  height: $height;
-  background-color: black(0.7);
-  padding: $p2;
+  padding: $p3 $p2;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 $radius-small $radius-small;
 }
 
 .Title {

@@ -12,9 +12,9 @@ module.exports = {
 
   resolve: {
     alias: {
-      app:    path.resolve(__dirname, 'app'),
-      comps:  path.resolve(__dirname, 'app/components'),
-      images: path.resolve(__dirname, 'app/images')
+      app:        path.resolve(__dirname, 'app'),
+      components: path.resolve(__dirname, 'app/components'),
+      images:     path.resolve(__dirname, 'app/images')
     }
   },
 
