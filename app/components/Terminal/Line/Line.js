@@ -11,7 +11,7 @@ class Line extends PureComponent {
     let body = children
     let tag = null
 
-    // TODO: Refactor
+    // TODO: Refactor!
     if (children) {
       const parts = children.split(/([\*\#])+\s?/)
 
@@ -23,7 +23,8 @@ class Line extends PureComponent {
           if (prefix === "*") {
             tag = <span className={css.Bullet}>{prefix}</span>
           } else if (prefix.match(/#/)) {
-            tag = <span className={css.Header}>{prefix}</span>
+            tag = <span className={css.HeaderSymbol}>{prefix}</span>
+            body = <span className={css.Header}>{body}</span>
           }
         }
       }

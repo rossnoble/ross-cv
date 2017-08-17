@@ -10,5 +10,10 @@
       ["PasswordBox", "https://www.passwordbox.com"],
       ["Le Site", "https://www.lesite.ca"]
     ]
+  },
+  "links": {
+    "strava": "http://www.strava.com/athletes/6789496",
+    "pcta": "http://www.pcta.org/discover-the-trail/thru-hiking-long-distance-hiking/2600-miler-list",
+    "burnreel": "http://www.burnreel.com/user/ross"
   }
 }

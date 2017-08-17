@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import data from 'app/data.json'
+import Lines from '../Lines/Lines'
 import Line from '../Line/Line'
 import css from './Vim.scss'
 
@@ -8,12 +9,36 @@ class Vim extends Component {
   render () {
     return (
       <div className={css.Vim}>
-        <Line number={1}># Ross Haliburton Noble</Line>
-        <Line number={2}></Line>
-        <Line number={3}>## About / Work</Line>
-        <Line number={4}></Line>
-        <Line number={5}>* Software developer from Vancouver, Canada</Line>
-        <Line number={6}>* Formerly of PasswordBox, Intel, Rocksauce</Line>
+        <Lines>
+          <div># Ross Haliburton Noble</div>
+          <div></div>
+          <div>## About / Work</div>
+          <div></div>
+          <div>* Formerly of PasswordBox, Intel, Rocksauce</div>
+          <div>* Software developer from Vancouver, Canada 🇨🇦 </div>
+          <div>* Ruby, JavaScript, Golang</div>
+          <div></div>
+          <div>## Hobbies / Interests</div>
+          <div></div>
+          <div>* Ultra running 👟</div>
+          <div>* Long-distance hiking (PCT 2016)</div>
+          <div>* Crossword puzzles</div>
+          <div>* Table tennis 🏓</div>
+          <div></div>
+          <div>## Projects</div>
+          <div></div>
+          <div>* PJM Softball</div>
+          <div>* Burnreel</div>
+          <div>* Capital G (now defunct)</div>
+          <div>* Carabiner (now defunct)</div>
+          <div></div>
+          <div>## Contact / Elsewhere</div>
+          <div></div>
+          <div>* Instagram</div>
+          <div>* Github</div>
+          <div>* AngelList</div>
+          <div>* Email</div>
+        </Lines>
 
         <div className={css.StatusBar}>
           <div className={css.StatusTop}>
