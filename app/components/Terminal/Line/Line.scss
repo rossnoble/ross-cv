@@ -1,0 +1,27 @@
+@import 'globals';
+
+.Line {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+}
+
+.LineNumber {
+  flex: 1;
+  text-align: right;
+  color: darken($color-grey, 10%);
+  padding-right: $p3;
+}
+
+.Content {
+  flex: 30;
+  color: $color-white;
+}
+
+.Header {
+  color: $color-teal;
+}
+
+.Bullet {
+  color: $color-violet;
+}
