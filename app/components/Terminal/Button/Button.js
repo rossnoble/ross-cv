@@ -23,14 +23,12 @@ class Button extends Component {
       onClick,
     } = this.props
 
-    console.log('props', this.props)
-
     const colorClass = this.getColorClass()
 
-    const className = classNames({
-      [`${css.Button}`]: true,
-      [`${colorClass}`]: true,
-    })
+    const className = classNames(
+      [`${css.Button}`],
+      [`${colorClass}`],
+    )
 
     return (
       <button

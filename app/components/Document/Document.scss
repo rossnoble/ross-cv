@@ -29,8 +29,11 @@
 }
 
 .Icon {
-  background: url('images/document.png') center center no-repeat;
-  width: 46px;
+  @include retina-background-image('images/document', 'png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 59px;
   height: 59px;
   display: inline-block;
 }
