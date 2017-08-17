@@ -21,16 +21,14 @@ $fontFamily-mono: Menlo, Monaco, Courier, sans;
 $fontSize-medium: 0.8125rem; // 13px
 $fontSize-small:  0.75rem;   // 12px
 
+// Sizing and spacing
+$radius-small: 4px;
 $line-height: 1.25;
 
-// Other
-$radius: 4px;
-$radius-small: 4px;
-
 // Padding units
-$p1: (1rem/8);
-$p2: (1rem/4);
-$p3: (1rem/2);
+$p1: (1rem / 8);
+$p2: (1rem / 4);
+$p3: (1rem / 2);
 $p4: (1rem);
 $p5: (1rem * 2);
 $p6: (1rem * 4);

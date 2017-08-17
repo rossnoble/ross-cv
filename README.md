@@ -2,7 +2,7 @@
 
 A simple website built with React and webpack.
 
-## Install
+## Install packages
 
 ```
 $ npm install
@@ -14,8 +14,16 @@ $ npm install
 $ npm start
 ```
 
-## Build for production
+## Build
 
 ```
 $ npm run build
+```
+
+## Deploy
+
+Add S3 details to config files required by https://github.com/klaemo/s3-website then run:
+
+```
+$ npm run deploy
 ```
