@@ -1,9 +1,6 @@
 @import 'globals';
 @import 'mixins';
 
-$width: 700px;
-$height: 500px;
-
 .Terminal {
   border-radius: $radius-small;
   box-shadow: 0 15px 30px 6px black(0.35);
