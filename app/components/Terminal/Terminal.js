@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import Rnd from 'react-rnd'
+import Responsive from 'react-responsive'
+
 import classNames from 'classnames'
 import Button from './Button/Button'
 import data from 'app/data.json'
 import css from './Terminal.scss'
+
+const Default = ({ children }) => <Responsive minWidth={768} children={children} />
+const Mobile = ({ children }) => <Responsive maxWidth={768} children={children} />
 
 class Terminal extends Component {
   constructor(props) {
@@ -42,13 +47,6 @@ class Terminal extends Component {
       resizeGrid,
     } = this.props
 
-    const rndConfig = {
-      x: (window.innerWidth / 2) - (width / 2),
-      y: (window.innerHeight / 2) - (height / 2) - 20,
-      width,
-      height
-    }
-
     // Hidden state on close/minimize
     if (!visible) return <div />
 
@@ -78,18 +76,39 @@ class Terminal extends Component {
     }
 
     // Normal state with drag and resize
+    const rndConfig = {
+      x: (window.innerWidth / 2) - (width / 2),
+      y: (window.innerHeight / 2) - (height / 2) - 20,
+      width,
+      height
+    }
+
+    const mobileClass = classNames(
+      [`${css.Terminal}`],
+      [`${css.Terminal__isFullscreen}`],
+      [`${css.Terminal__isMobile}`],
+    )
+
     return (
-      <Rnd default={rndConfig}
-        className={css.Terminal}
-        enableResizing={resizeConfig}
-        minWidth={minWidth}
-        minHeight={minHeight}
-        resizeGrid={resizeGrid}
-        bounds="parent"
-        dragHandlerClassName={`.${css.Header}`}
-      >
-        {body}
-      </Rnd>
+      <div>
+        <Default>
+          <Rnd default={rndConfig}
+            className={css.Terminal}
+            enableResizing={resizeConfig}
+            minWidth={minWidth}
+            minHeight={minHeight}
+            resizeGrid={resizeGrid}
+            dragHandlerClassName={`.${css.Header}`}
+          >
+            {body}
+          </Rnd>
+        </Default>
+        <Mobile>
+          <div className={mobileClass}>
+            {body}
+          </div>
+        </Mobile>
+      </div>
     )
   }
 }
