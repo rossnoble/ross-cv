@@ -17,25 +17,23 @@ class Vim extends Component {
           <div></div>
           <div kind="bullet">Software developer from Vancouver, Canada 🇨🇦 </div>
           <div kind="bullet">
-            Employers include {' '}
             <Link href={data.links.rocksauce}>Rock Sauce</Link>,{' '}
             <Link href={data.links.intel}>Intel</Link>,{' '}
             <Link href={data.links.passwordbox}>PasswordBox</Link>,{' '}
             <Link href={data.links.lesite}>Le Site</Link>,{' '}
             <Link href={data.links.mate1}>Mate1</Link>
           </div>
-          <div kind="bullet">Ruby, JavaScript, Golang</div>
+          <div kind="bullet">Ruby, JavaScript, Go</div>
           <div></div>
           <div kind="h2">Hobbies / Interests</div>
           <div></div>
           <div kind="bullet">
-            <Link href={data.links.pcta}>{"Hiking (PCT '16)"}</Link>
+            Hiking <Link href={data.links.pcta}>{"(PCT 2016)"}</Link>
           </div>
           <div kind="bullet">
-            <Link href={data.links.strava}>Ultra running</Link> 👟
+            <Link href={data.links.strava}>Ultra-running</Link>
           </div>
           <div kind="bullet">Crossword puzzles</div>
-          <div kind="bullet">Table tennis 🏓</div>
           <div></div>
           <div kind="h2">Projects</div>
           <div></div>
