@@ -20,7 +20,7 @@ class Vim extends Component {
             Employers include {' '}
             <Link href={data.links.rocksauce}>Rock Sauce</Link>,{' '}
             <Link href={data.links.intel}>Intel</Link>,{' '}
-            <Link href={data.links.password}>PasswordBox</Link>,{' '}
+            <Link href={data.links.passwordbox}>PasswordBox</Link>,{' '}
             <Link href={data.links.lesite}>Le Site</Link>,{' '}
             <Link href={data.links.mate1}>Mate1</Link>
           </div>

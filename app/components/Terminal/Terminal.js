@@ -20,6 +20,26 @@ class Terminal extends Component {
 
     this.closeWindow = this.closeWindow.bind(this)
     this.toggleFullscreen = this.toggleFullscreen.bind(this)
+    this.centerWindow = this.centerWindow.bind(this)
+  }
+
+  componentDidMount () {
+    window.addEventListener('resize', this.centerWindow)
+  }
+
+  centerWindow () {
+    if (!this.rnd) return
+
+    const { wrapper } = this.rnd
+    if (!wrapper) return
+
+    const width = wrapper.clientWidth
+    const height = wrapper.clientHeight
+
+    const x = (window.innerWidth / 2) - (width / 2)
+    const y = (window.innerHeight / 2) - (height / 2) - 20
+
+    this.rnd.updatePosition({ x, y })
   }
 
   closeWindow (e) {
@@ -92,7 +112,9 @@ class Terminal extends Component {
     return (
       <div>
         <Default>
-          <Rnd default={rndConfig}
+          <Rnd
+            default={rndConfig}
+            ref={c => { this.rnd = c }}
             className={css.Terminal}
             enableResizing={resizeConfig}
             minWidth={minWidth}
