@@ -1,0 +1,56 @@
+@-webkit-keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity);
+}
+
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
+
+@mixin user-select($value) {
+  -webkit-user-select: $value;
+   -khtml-user-select: $value;
+     -moz-user-select: $value;
+      -ms-user-select: $value;
+}
+
+@mixin button($color) {
+  background-color: $color;
+  box-shadow: inset 0 0 1px darken($color, 8%);
+
+  &:active {
+    box-shadow: inset 0 0 4px black(0.4);
+  }
+}
+
+@mixin retina-background-image($file, $type) {
+  background-image: url($file + '.' + $type);
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+         only screen and (min--moz-device-pixel-ratio: 2),
+         only screen and (-o-min-device-pixel-ratio: 2/1),
+         only screen and (min-device-pixel-ratio: 2),
+         only screen and (min-resolution: 192dpi),
+         only screen and (min-resolution: 2dppx) {
+    background-image: url($file + '@2x.' + $type);
+  }
+}

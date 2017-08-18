@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $color-black;
+}
+
+body {
+  padding: 0;
+  margin : 0;
+  font-family: $fontFamily-sans;
+  font-size: 16px;
+  line-height: $line-height;
+  color: $color-white;
+  height: 100%;
+}
+
+h1, h2, h3, p, li, .li {
+  margin: 0;
+  font-size: $fontSize-medium;
+  line-height: $line-height;
+  color: $color-white;
+}
+
+p {
+  margin: 0;
+  font-size: $fontSize-medium;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: $color-pink;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px solid $color-pink;
+  }
+}

@@ -1,0 +1,54 @@
+@import 'globals';
+@import 'mixins';
+
+$size: 13px;
+
+.Button {
+  width: $size;
+  height: $size;
+  border: 0;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  position: relative;
+
+  .Symbol {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1;
+    text-align: center;
+    width: $size;
+    height: $size;
+    font-weight: 100;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    border: 0;
+    cursor: default;
+
+    .Symbol {
+      display: block;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.Button__orange {
+    @include button($color-orange);
+  }
+
+  &.Button__red {
+    @include button($color-red);
+  }
+
+  &.Button__green {
+    @include button($color-green);
+  }
+}

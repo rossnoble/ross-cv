@@ -1,0 +1,68 @@
+@import 'globals';
+@import 'mixins';
+
+.Terminal {
+  border-radius: $radius-small;
+  box-shadow: 0 15px 30px 6px black(0.35);
+  background-color: black(0.7);
+  z-index: $zIndex-1;
+
+  &.Terminal__isFullscreen {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+  }
+
+  &.Terminal__isMobile {
+    .Header {
+      display: none;
+    }
+
+    .Body {
+      top: 0;
+    }
+  }
+}
+
+.Header {
+  display: flex;
+  min-height: 24px;
+  z-index: $zIndex-3;
+  background-color: $color-smoke;
+  background-image: linear-gradient(to top, $color-smoke, lighten($color-smoke, 10%));
+  line-height: 1;
+  padding: 0.3rem 0.45rem;
+  cursor: move;
+  text-align: center;
+  color: lighten($color-charcoal, 25%);
+  text-shadow: 0 1px 0 white;
+  white-space: nowrap;
+  font-size: $fontSize-medium;
+  border-radius: $radius-small $radius-small 0 0;
+}
+
+.Body {
+  padding: $p3 $p2;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 0 0 $radius-small $radius-small;
+}
+
+.Title {
+  flex: 1;
+  padding-right: 55px; // Roughtly centered
+}
+
+.Buttons {
+  float: left;
+  display: flex;
+}

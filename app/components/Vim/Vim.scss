@@ -1,0 +1,50 @@
+@import 'globals';
+@import 'mixins';
+
+.Vim {
+  cursor: text;
+  font-family: $fontFamily-mono;
+  font-size: $fontSize-medium;
+}
+
+.StatusBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zIndex-2;
+}
+
+.StatusTop {
+  padding: $p1;
+  color: $color-aqua;
+  background-color: $color-charcoal;
+  white-space: nowrap;
+}
+
+.StatusBottom {
+  padding: $p1;
+  color: $color-grey;
+  background-color: darken($color-charcoal, 15%);
+  white-space: nowrap;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.Cursor {
+  width: 7px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: text-top;
+  background-color: darken($color-grey, 10%);
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
