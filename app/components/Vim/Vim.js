@@ -17,21 +17,22 @@ class Vim extends Component {
           <div></div>
           <div kind="bullet">Software developer from Vancouver, Canada 🇨🇦 </div>
           <div kind="bullet">
+            <span>Former employers: </span>
+            <Link href={data.links.tickit}>Tickit Health</Link>,{' '}
             <Link href={data.links.rocksauce}>Rock Sauce</Link>,{' '}
             <Link href={data.links.intel}>Intel</Link>,{' '}
             <Link href={data.links.passwordbox}>PasswordBox</Link>,{' '}
-            <Link href={data.links.lesite}>Le Site</Link>,{' '}
-            <Link href={data.links.mate1}>Mate1</Link>
+            <Link href={data.links.lesite}>Le Site</Link>{' '}
           </div>
-          <div kind="bullet">Ruby, JavaScript, Go</div>
+          <div kind="bullet">Preferred tech: Ruby, JavaScript, Go</div>
           <div></div>
           <div kind="h2">Hobbies / Interests</div>
           <div></div>
           <div kind="bullet">
-            Hiking <Link href={data.links.pcta}>{"(PCT 2016)"}</Link>
+            Hiking (thru-hiked the <Link href={data.links.pcta}>{"PCT"}</Link> in 2016)
           </div>
           <div kind="bullet">
-            <Link href={data.links.strava}>Ultra-running</Link>
+            Trail Running (<Link href={data.links.strava}>Strava</Link>)
           </div>
           <div kind="bullet">Crossword puzzles</div>
           <div></div>
@@ -57,9 +58,6 @@ class Vim extends Component {
           </div>
           <div kind="bullet">
             <Link href={data.links.github}>Github</Link>
-          </div>
-          <div kind="bullet">
-            <Link href={data.links.angel}>AngelList</Link>
           </div>
           <div kind="bullet">
             <a href={`mailto:${data.links.email}?subject=Hi`}>Email</a>
