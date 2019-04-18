@@ -136,8 +136,8 @@ class Terminal extends Component {
 }
 
 Terminal.defaultProps = {
-  width: 700,
-  height: 550,
+  width: 720,
+  height: 600,
   minWidth: 200,
   minHeight: 160,
   resizeGrid: [15, 15],
