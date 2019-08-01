@@ -1,7 +1,6 @@
 @import 'globals';
 
 .Line {
-  white-space: nowrap;
   overflow: hidden;
   display: flex;
 }
@@ -12,6 +11,12 @@
   padding-right: $p3;
   width: 25px;
   min-width: 25px;
+  
+  @media only screen and (max-width: 460px) {
+    visibility: hidden;
+    width: 10px;
+    min-width: 10px;
+  }
 }
 
 .Content {
