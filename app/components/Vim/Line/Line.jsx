@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import css from './Line.scss'
+import css from './Line.module.scss'
 
 class Line extends PureComponent {
 

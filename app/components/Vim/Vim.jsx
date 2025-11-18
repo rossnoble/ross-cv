@@ -3,7 +3,7 @@ import data from 'app/data.json'
 import Link from 'components/shared/Link/Link'
 import Lines from './Lines/Lines'
 import Line from './Line/Line'
-import css from './Vim.scss'
+import css from './Vim.module.scss'
 
 class Vim extends Component {
 

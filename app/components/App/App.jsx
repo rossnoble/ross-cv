@@ -4,7 +4,7 @@ import Terminal from 'components/Terminal/Terminal'
 import Vim from 'components/Vim/Vim'
 import Link from 'components/shared/Link/Link'
 import data from 'app/data.json'
-import css from './App.scss'
+import css from './App.module.scss'
 
 // Background images
 import imgMountHood from 'images/mount-hood.jpg';

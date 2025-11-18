@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import data from 'app/data.json'
-import css from './Button.scss'
+import css from './Button.module.scss'
 
 class Button extends Component {
 

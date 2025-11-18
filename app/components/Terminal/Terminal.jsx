@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
-import Rnd from 'react-rnd'
-import Responsive from 'react-responsive'
+import { Rnd } from 'react-rnd'
+import { useMediaQuery } from 'react-responsive'
 
 import classNames from 'classnames'
 import Button from './Button/Button'
 import data from 'app/data.json'
-import css from './Terminal.scss'
+import css from './Terminal.module.scss'
 
-const Default = ({ children }) => <Responsive minWidth={768} children={children} />
-const Mobile = ({ children }) => <Responsive maxWidth={768} children={children} />
+const Default = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 768 })
+  return isDesktop ? children : null
+}
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile ? children : null
+}
 
 class Terminal extends Component {
   constructor(props) {
@@ -28,13 +34,11 @@ class Terminal extends Component {
   }
 
   centerWindow () {
-    if (!this.rnd) return
+    if (!this.rnd || !this.rnd.resizableElement || !this.rnd.resizableElement.current) return
 
-    const { wrapper } = this.rnd
-    if (!wrapper) return
-
-    const width = wrapper.clientWidth
-    const height = wrapper.clientHeight
+    const element = this.rnd.resizableElement.current
+    const width = element.clientWidth
+    const height = element.clientHeight
 
     const x = (window.innerWidth / 2) - (width / 2)
     const y = (window.innerHeight / 2) - (height / 2) - 20
@@ -120,7 +124,7 @@ class Terminal extends Component {
             minWidth={minWidth}
             minHeight={minHeight}
             resizeGrid={resizeGrid}
-            dragHandlerClassName={`.${css.Header}`}
+            dragHandleClassName={css.Header}
           >
             {body}
           </Rnd>
