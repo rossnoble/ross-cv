@@ -4,7 +4,6 @@ import { useMediaQuery } from 'react-responsive'
 
 import classNames from 'classnames'
 import Button from './Button/Button'
-import data from 'app/data.json'
 import css from './Terminal.module.scss'
 
 const Default = ({ children }) => {
@@ -29,47 +28,40 @@ class Terminal extends Component {
     this.centerWindow = this.centerWindow.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('resize', this.centerWindow)
   }
 
-  centerWindow () {
+  centerWindow() {
     if (!this.rnd || !this.rnd.resizableElement || !this.rnd.resizableElement.current) return
 
     const element = this.rnd.resizableElement.current
     const width = element.clientWidth
     const height = element.clientHeight
 
-    const x = (window.innerWidth / 2) - (width / 2)
-    const y = (window.innerHeight / 2) - (height / 2) - 20
+    const x = window.innerWidth / 2 - width / 2
+    const y = window.innerHeight / 2 - height / 2 - 20
 
     this.rnd.updatePosition({ x, y })
   }
 
-  closeWindow (e) {
+  closeWindow(e) {
     // Reset fullscreen state
     this.setState({ fullscreen: false })
     this.props.onClose(e)
   }
 
-  toggleFullscreen (e) {
+  toggleFullscreen() {
     this.setState({
       fullscreen: !this.state.fullscreen,
     })
   }
 
-  render () {
+  render() {
     const { fullscreen } = this.state
     const { visible } = this.props
 
-    const {
-      resizeConfig,
-      width,
-      height,
-      minWidth,
-      minHeight,
-      resizeGrid,
-    } = this.props
+    const { resizeConfig, width, height, minWidth, minHeight, resizeGrid } = this.props
 
     // Hidden state on close/minimize
     if (!visible) return <div />
@@ -78,39 +70,39 @@ class Terminal extends Component {
       <div>
         <div className={css.Header}>
           <div className={css.Buttons}>
-            <Button color="red" onClick={this.closeWindow}>×</Button>
-            <Button color="orange" onClick={this.closeWindow}>‐</Button>
-            <Button color="green" onClick={this.toggleFullscreen}>+</Button>
+            <Button color="red" onClick={this.closeWindow}>
+              ×
+            </Button>
+            <Button color="orange" onClick={this.closeWindow}>
+              ‐
+            </Button>
+            <Button color="green" onClick={this.toggleFullscreen}>
+              +
+            </Button>
           </div>
           <span className={css.Title}>1. vim</span>
         </div>
-        <div className={css.Body}>
-          {this.props.children}
-        </div>
+        <div className={css.Body}>{this.props.children}</div>
       </div>
     )
 
     // Fullscreen without drag and resize
     if (fullscreen) {
-      return (
-        <div className={`${css.Terminal} ${css.Terminal__isFullscreen}`}>
-          {body}
-        </div>
-      )
+      return <div className={`${css.Terminal} ${css.Terminal__isFullscreen}`}>{body}</div>
     }
 
     // Normal state with drag and resize
     const rndConfig = {
-      x: (window.innerWidth / 2) - (width / 2),
-      y: (window.innerHeight / 2) - (height / 2) - 20,
+      x: window.innerWidth / 2 - width / 2,
+      y: window.innerHeight / 2 - height / 2 - 20,
       width,
-      height
+      height,
     }
 
     const mobileClass = classNames(
       [`${css.Terminal}`],
       [`${css.Terminal__isFullscreen}`],
-      [`${css.Terminal__isMobile}`],
+      [`${css.Terminal__isMobile}`]
     )
 
     return (
@@ -118,7 +110,9 @@ class Terminal extends Component {
         <Default>
           <Rnd
             default={rndConfig}
-            ref={c => { this.rnd = c }}
+            ref={(c) => {
+              this.rnd = c
+            }}
             className={css.Terminal}
             enableResizing={resizeConfig}
             minWidth={minWidth}
@@ -130,9 +124,7 @@ class Terminal extends Component {
           </Rnd>
         </Default>
         <Mobile>
-          <div className={mobileClass}>
-            {body}
-          </div>
+          <div className={mobileClass}>{body}</div>
         </Mobile>
       </div>
     )
@@ -141,7 +133,7 @@ class Terminal extends Component {
 
 Terminal.defaultProps = {
   width: 720,
-  height: 600,
+  height: 660,
   minWidth: 200,
   minHeight: 160,
   resizeGrid: [15, 15],
@@ -153,8 +145,8 @@ Terminal.defaultProps = {
     right: true,
     top: true,
     topLeft: true,
-    topRight: true
-  }
+    topRight: true,
+  },
 }
 
 export default Terminal

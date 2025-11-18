@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import { Rnd } from "react-rnd";
-import classNames from "classnames";
-import data from "app/data.json";
-import css from "./Document.module.scss";
+import React, { Component } from 'react'
+import { Rnd } from 'react-rnd'
+import classNames from 'classnames'
+import data from 'app/data.json'
+import css from './Document.module.scss'
 
 class Document extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       selected: false,
-    };
+    }
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleBodyClick = this.handleBodyClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
+    this.handleBodyClick = this.handleBodyClick.bind(this)
   }
 
   componentDidMount() {
-    document.body.addEventListener("click", this.handleBodyClick);
+    document.body.addEventListener('click', this.handleBodyClick)
   }
 
   handleBodyClick(e) {
     if (this.state.selected) {
       this.setState({
         selected: false,
-      });
+      })
     }
   }
 
@@ -32,35 +32,33 @@ class Document extends Component {
     if (!this.state.selected) {
       this.setState({
         selected: true,
-      });
+      })
     }
   }
 
   render() {
-    const { onDoubleClick } = this.props;
+    const { onDoubleClick } = this.props
 
     const className = classNames({
       [`${css.Document}`]: true,
       [`${css.Document__isSelected}`]: this.state.selected,
-    });
+    })
 
     return (
       <Rnd
-        default={{ x: 30, y: 30 }}
+        default={{ x: 30, y: 56 }}
         className={className}
         bounds="parent"
-        extendsProps={{
-          onClick: this.handleClick,
-          onDoubleClick: onDoubleClick,
-        }}
+        onClick={this.handleClick}
+        onDoubleClick={onDoubleClick}
       >
         <div className={css.IconWrapper}>
           <div className={css.Icon}></div>
         </div>
         <div className={css.Filename}>{data.filename}</div>
       </Rnd>
-    );
+    )
   }
 }
 
-export default Document;
+export default Document

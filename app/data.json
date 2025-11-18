@@ -1,6 +1,6 @@
 {
   "name": "Ross Haliburton Noble",
-  "filename": "rossnoble.md",
+  "filename": "README.md",
   "about": {
     "title": "About / Work",
     "description": "Software developer from Vancouver, BC"
@@ -8,24 +8,23 @@
   "links": {
     "fifteen": "http://15x365.com",
     "fntc": "http://technologycouncil.ca",
-    "domain7": "https://domain7.com",
+    "domain7": "https://versett.com/",
     "ce": "https://cinemaesoterica.com",
     "strava": "https://www.strava.com/athletes/6789496",
     "pcta": "https://www.pcta.org/discover-the-trail/thru-hiking-long-distance-hiking/2600-miler-list/",
     "burnreel": "http://www.burnreel.com",
     "tickit": "https://tickithealth.com/",
-    "rocksauce": "http://www.rocksaucestudios.com",
+    "rocksauce": "https://exsquared.com/",
     "intel": "http://www.intel.com",
     "passwordbox": "https://www.passwordbox.com",
-    "lesite": "http://www.lesite.ca",
-    "mate1": "http://www.mate1.com",
+    "breathelife": "https://zinnia.com/",
+    "paytient": "https://paytient.com/",
     "pjmsl": "https://www.pjmsoftball.com",
     "github": "https://www.github.com/rossnoble",
     "instagram": "https://www.instagram.com/rhnoble",
     "angel": "http://www.angel.co/rossnoble",
-    "capitalg": "http://rossnoble.github.io/capital-g/",
     "carabiner": "http://rossnoble.github.io/carabiner/",
-    "email": "rosshnoble@gmail.com",
-    "source": "https://www.github.com/rossnoble/personal-website"
+    "source": "https://www.github.com/rossnoble/personal-website",
+    "blog": "http://rossnoble.net"
   }
 }

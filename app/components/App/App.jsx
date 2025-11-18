@@ -1,26 +1,22 @@
 import React, { Component } from 'react'
-import Document from 'components/Document/Document'
-import Terminal from 'components/Terminal/Terminal'
-import Vim from 'components/Vim/Vim'
-import Link from 'components/shared/Link/Link'
-import data from 'app/data.json'
+
+import Document from '../Document/Document'
+import Terminal from '../Terminal/Terminal'
+import Vim from '../Vim/Vim'
+import Link from '../shared/Link/Link'
+import data from '../../data.json'
 import css from './App.module.scss'
 
 // Background images
-import imgMountHood from 'images/mount-hood.jpg';
-import imgMountJefferson from 'images/mount-jefferson.jpg';
-import imgOregon from 'images/south-oregon.jpg';
-import imgTongariro from 'images/tongariro.jpg';
+import imgMountHood from 'images/mount-hood.jpg'
+import imgMountJefferson from 'images/mount-jefferson.jpg'
+import imgOregon from 'images/south-oregon.jpg'
+import imgTongariro from 'images/tongariro.jpg'
 
-const backgrounds = [
-  imgMountHood,
-  imgMountJefferson,
-  imgOregon,
-  imgTongariro,
-];
+const backgrounds = [imgMountHood, imgMountJefferson, imgOregon, imgTongariro]
 
 class App extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -32,48 +28,46 @@ class App extends Component {
     this.handleClose = this.handleClose.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.setState({
-      background: this.getBackground()
+      background: this.getBackground(),
     })
   }
 
-  getBackground () {
-    const max = backgrounds.length;
-    const index = Math.floor(Math.random() * max);
-    const image = backgrounds[index];
+  getBackground() {
+    const max = backgrounds.length
+    const index = Math.floor(Math.random() * max)
+    const image = backgrounds[index]
 
-    return `url(${image})`;
+    return `url(${image})`
   }
 
-  handleClose (e) {
+  handleClose() {
     this.setState({ showTerminal: false })
   }
 
-  handleDoubleClick (e) {
+  handleDoubleClick() {
     this.setState({ showTerminal: true })
   }
 
-  render () {
+  render() {
     const style = { backgroundImage: this.state.background }
 
     return (
       <div className={css.App} style={style}>
-        <Document
-          onDoubleClick={this.handleDoubleClick}
-        />
+        <div className={css.Banner}>
+          This project is no longer being updated. Check out my blog:{' '}
+          <a href="https://rossnoble.net" target="_blank">
+            rossnoble.net
+          </a>
+        </div>
+        <Document onDoubleClick={this.handleDoubleClick} />
 
-        <Terminal
-          visible={this.state.showTerminal}
-          onClose={this.handleClose}
-        >
+        <Terminal visible={this.state.showTerminal} onClose={this.handleClose}>
           <Vim />
         </Terminal>
 
-        <Link
-          href={data.links.source}
-          className={css.SourceLink}
-        >
+        <Link href={data.links.source} className={css.SourceLink}>
           View on Github
         </Link>
       </div>

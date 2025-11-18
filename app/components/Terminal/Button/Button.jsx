@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import data from 'app/data.json'
 import css from './Button.module.scss'
 
 class Button extends Component {
-
-  getColorClass () {
+  getColorClass() {
     switch (this.props.color) {
       case 'green':
         return css.Button__green
@@ -16,28 +14,16 @@ class Button extends Component {
     }
   }
 
-  render () {
-    const {
-      color,
-      symbol,
-      onClick,
-    } = this.props
+  render() {
+    const { onClick } = this.props
 
     const colorClass = this.getColorClass()
 
-    const className = classNames(
-      [`${css.Button}`],
-      [`${colorClass}`],
-    )
+    const className = classNames([`${css.Button}`], [`${colorClass}`])
 
     return (
-      <button
-        className={className}
-        onClick={onClick}
-      >
-        <span className={css.Symbol}>
-          {this.props.children}
-        </span>
+      <button className={className} onClick={onClick}>
+        <span className={css.Symbol}>{this.props.children}</span>
       </button>
     )
   }

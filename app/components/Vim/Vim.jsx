@@ -2,34 +2,41 @@ import React, { Component } from 'react'
 import data from 'app/data.json'
 import Link from 'components/shared/Link/Link'
 import Lines from './Lines/Lines'
-import Line from './Line/Line'
 import css from './Vim.module.scss'
 
 class Vim extends Component {
-
-  render () {
+  render() {
     return (
       <div className={css.Vim}>
         <Lines>
           <div kind="h1">Ross Haliburton Noble</div>
           <div></div>
-          <div kind="h2">About Me</div>
+          <div kind="h2">About me</div>
           <div></div>
-          <div>I am a software developer from Vancouver, Canada. &#127464;&#127462; I like working</div>
-          <div>with Ruby, JavaScript and Go, but mostly I enjoy making cool stuff.</div>
+          <div>I am a software developer from Vancouver, Canada. &#127464;&#127462;</div>
           <div></div>
-          <div>When not working, I enjoy reading, <Link href={data.links.strava}>running</Link> and watching {' '}
-            <Link href={data.links.ce}>movies</Link>. In 2016, I walked</div>
-          <div>from Mexico to Canada on the <Link href={data.links.pcta}>Pacific Crest Trail</Link>. I now live in a converted</div>
-          <div>Sprinter van named Betsy. &#128656;</div>
+          <div>
+            I enjoy reading, <Link href={data.links.strava}>running</Link> and watching{' '}
+            <Link href={data.links.ce}>movies</Link>. In 2016, I walked from Mexico
+          </div>
+          <div>
+            to Canada on the <Link href={data.links.pcta}>Pacific Crest Trail</Link>. Afterwards I
+            lived in a converted Sprinter
+          </div>
+          <div>van for five years. &#128656;.</div>
           <div></div>
-          <div kind="h2">Work Experience</div>
+          <div>I now live in Montreal with my wife and son.</div>
+          <div></div>
+          <div kind="h2">{"Places I've worked"}</div>
           <div></div>
           <div kind="bullet">
-            <Link href={data.links.fntc}>First Nations Technology Council</Link>
+            <Link href={data.links.paytient}>Paytient</Link>
           </div>
           <div kind="bullet">
-            <Link href={data.links.domain7}>Domain7</Link>
+            <Link href={data.links.breathelife}>BreatheLife</Link>
+          </div>
+          <div kind="bullet">
+            <Link href={data.links.fntc}>First Nations Tech Council</Link>
           </div>
           <div kind="bullet">
             <Link href={data.links.tickit}>Tickit Health</Link>
@@ -38,11 +45,13 @@ class Vim extends Component {
             <Link href={data.links.rocksauce}>Rock Sauce Studios</Link>
           </div>
           <div kind="bullet">
-            <Link href={data.links.passwordbox}>PasswordBox</Link>{' / '}
             <Link href={data.links.intel}>Intel</Link>
           </div>
+          <div kind="bullet">
+            <Link href={data.links.passwordbox}>PasswordBox</Link>
+          </div>
           <div></div>
-          <div kind="h2">Personal Projects</div>
+          <div kind="h2">Personal projects</div>
           <div></div>
           <div kind="bullet">
             <Link href={data.links.ce}>Cinema Esoterica Podcast</Link>
@@ -57,27 +66,22 @@ class Vim extends Component {
             <Link href={data.links.burnreel}>Burnreel</Link>
           </div>
           <div></div>
-          <div kind="h2">Contact / Links</div>
+          <div kind="h2">Elsewhere</div>
           <div></div>
           <div kind="bullet">
             <Link href={data.links.instagram}>Instagram</Link>
           </div>
           <div kind="bullet">
-            <Link href={data.links.github}>Github</Link>
+            <Link href={data.links.x}>X</Link>
           </div>
           <div kind="bullet">
-            <a href={`mailto:${data.links.email}?subject=Hi`}>Email</a>
-            <div className={css.Cursor} />
+            <Link href={data.links.github}>Github</Link>
           </div>
         </Lines>
 
         <div className={css.StatusBar}>
-          <div className={css.StatusTop}>
-            {data.filename}
-          </div>
-          <div className={css.StatusBottom}>
-            {data.filename} 32L, 326C written
-          </div>
+          <div className={css.StatusTop}>{data.filename}</div>
+          <div className={css.StatusBottom}>{data.filename} 32L, 326C written</div>
         </div>
       </div>
     )

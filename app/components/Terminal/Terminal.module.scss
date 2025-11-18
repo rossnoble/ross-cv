@@ -27,6 +27,10 @@
       top: 0;
     }
   }
+
+  a:hover {
+    cursor: pointer;
+  }
 }
 
 .Header {
@@ -37,7 +41,6 @@
   background-image: linear-gradient(to top, $color-smoke, lighten($color-smoke, 10%));
   line-height: 1;
   padding: 0.3rem 0.45rem;
-  cursor: move;
   text-align: center;
   color: lighten($color-charcoal, 25%);
   text-shadow: 0 1px 0 white;
