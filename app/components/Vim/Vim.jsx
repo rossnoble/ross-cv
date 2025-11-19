@@ -69,13 +69,10 @@ class Vim extends Component {
           <div kind="h2">Elsewhere</div>
           <div></div>
           <div kind="bullet">
-            <Link href={data.links.instagram}>Instagram</Link>
+            <Link href={data.links.github}>Github</Link>
           </div>
           <div kind="bullet">
             <Link href={data.links.x}>X</Link>
-          </div>
-          <div kind="bullet">
-            <Link href={data.links.github}>Github</Link>
           </div>
         </Lines>
 
