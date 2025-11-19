@@ -29,6 +29,7 @@ class Document extends Component {
   }
 
   handleClick(e) {
+    e.stopPropagation()
     if (!this.state.selected) {
       this.setState({
         selected: true,
