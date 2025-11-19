@@ -1,6 +1,6 @@
-# Ross Noble's Personal Website
+# CV
 
-A simple website built with React and webpack.
+A simple built with React and a little bit about me.
 
 ## Install packages
 
@@ -11,7 +11,7 @@ $ npm install
 ## Run locally
 
 ```
-$ npm start
+$ npm run dev
 ```
 
 ## Build
