@@ -25,5 +25,9 @@
     "url": "git@bitbucket.org:rossnoble/rossnoble.git"
   },
   "author": "Ross Noble",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "packageManager": "npm@10.9.2"
 }
