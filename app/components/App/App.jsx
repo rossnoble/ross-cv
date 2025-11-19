@@ -26,6 +26,7 @@ class App extends Component {
 
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.handleChangeBackground = this.handleChangeBackground.bind(this)
   }
 
   componentDidMount() {
@@ -39,7 +40,11 @@ class App extends Component {
     const index = Math.floor(Math.random() * max)
     const image = backgrounds[index]
 
-    return `url(${image})`
+    if (this.state.background === image) {
+      return this.getBackground()
+    }
+
+    return image
   }
 
   handleClose() {
@@ -50,8 +55,14 @@ class App extends Component {
     this.setState({ showTerminal: true })
   }
 
+  handleChangeBackground() {
+    this.setState({
+      background: this.getBackground(),
+    })
+  }
+
   render() {
-    const style = { backgroundImage: this.state.background }
+    const style = { backgroundImage: `url(${this.state.background})` }
 
     return (
       <div className={css.App} style={style}>
@@ -70,6 +81,10 @@ class App extends Component {
         <Link href={data.links.source} className={css.SourceLink}>
           View on Github
         </Link>
+
+        <button className={css.BackgroundButton} onClick={this.handleChangeBackground}>
+          Change background
+        </button>
       </div>
     )
   }
